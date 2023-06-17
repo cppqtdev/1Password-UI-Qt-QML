@@ -37,7 +37,7 @@ ComboBox {
                 font.weight: Font.Medium
                 verticalAlignment: Image.AlignVCenter
                 Layout.alignment: Qt.AlignVCenter
-                color: itemDelegate.hovered ? "white" : Qt.darkGray
+                color: itemDelegate.hovered ? "white" : "dark"
                 Layout.leftMargin: 10
             }
 
@@ -98,7 +98,7 @@ ComboBox {
                 font.weight: Font.Medium
                 verticalAlignment: Image.AlignVCenter
                 Layout.alignment: Qt.AlignVCenter
-                color: Qt.darkGray
+                color: "black"
                 elide: Text.ElideRight
                 Layout.leftMargin: 10
             }

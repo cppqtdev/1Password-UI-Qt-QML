@@ -49,7 +49,7 @@ ItemDelegate {
             font.weight: Font.Medium
             verticalAlignment: Image.AlignVCenter
             Layout.alignment: Qt.AlignVCenter
-            color: root.highlighted || root.hovered ? "white" : Qt.darkGray
+            color: root.highlighted || root.hovered ? "white" : "dark"
         }
     }
 }
