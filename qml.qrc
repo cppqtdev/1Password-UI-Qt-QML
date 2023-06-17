@@ -590,5 +590,8 @@
         <file>common/SwitchWithLeftLabel.qml</file>
         <file>common/VerticalDivider.qml</file>
         <file>GameScreens/ScreenPage.qml</file>
+        <file>Settings/Settings.qml</file>
+        <file>Settings/SideListDelegate.qml</file>
+        <file>Settings/SideListModel.qml</file>
     </qresource>
 </RCC>
