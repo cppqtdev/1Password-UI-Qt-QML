@@ -3,10 +3,12 @@ import QtQuick.Window 2.15
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.3
 import QtQuick.Controls.Material 2.3
+import QtQml 2.15
 import "./ScreensComponents"
 import "./GameScreens"
 import "./ScreensComponents/LeftSideDrawer"
 import "./ScreensComponents/RightSideDrawer"
+import "./Settings"
 ApplicationWindow {
     id:root
     width: 1280
@@ -129,9 +131,20 @@ ApplicationWindow {
         onHomeClicked: {
             mainStack.pop(null)
         }
-        onHelpCliked: {}
+        onHelpCliked: {
+            var component = Qt.createComponent("qrc:/Settings/Settings.qml");
+            var win = component.createObject(root);
+            win.show();
+        }
         onSettingsCliked: {
             settingsDrawer.open()
+        }
+
+        Component{
+            id:settings
+            Settings{
+
+            }
         }
     }
     Loader{

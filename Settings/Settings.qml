@@ -1,13 +1,18 @@
 import QtQuick 2.15
-import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.15
-import "./"
-import "../ScreensComponents"
-import "../Settings"
-ScreenPage{
-    anchors.fill: parent
-    property int buttonWidth:root.width *0.20
-    property int buttonHeight:root.height *0.25
+import QtQuick.Layouts 1.3
+
+ApplicationWindow {
+    id:root
+    visible: true
+    width: 800
+    height: 600
+    minimumWidth: 800
+    maximumWidth: 1280
+    minimumHeight: 600
+    maximumHeight: 750
+    title: "Settings"
+
     SplitView {
         id: splitView
         anchors.fill: parent
@@ -41,6 +46,7 @@ ScreenPage{
             SplitView.preferredWidth: 250
             SplitView.maximumWidth: 300
             SplitView.minimumWidth: 250
+
             ListView{
                 id:listItemView
                 anchors.fill: parent
@@ -84,5 +90,4 @@ ScreenPage{
             }
         }
     }
-
 }
