@@ -6,8 +6,6 @@ import "../ScreensComponents"
 import "../Settings"
 ScreenPage{
     anchors.fill: parent
-    property int buttonWidth:root.width *0.20
-    property int buttonHeight:root.height *0.25
     SplitView {
         id: splitView
         anchors.fill: parent

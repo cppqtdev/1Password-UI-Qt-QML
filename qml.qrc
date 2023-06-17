@@ -593,5 +593,8 @@
         <file>Settings/Settings.qml</file>
         <file>Settings/SideListDelegate.qml</file>
         <file>Settings/SideListModel.qml</file>
+        <file>Settings/GeneralSettingsPage.qml</file>
+        <file>common/PrefsComboBox.qml</file>
+        <file>common/PrefsComboBoxLabel.qml</file>
     </qresource>
 </RCC>
