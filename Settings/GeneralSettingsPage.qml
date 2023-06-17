@@ -8,8 +8,11 @@ ScreenPage{
     anchors.fill: parent
     ColumnLayout{
         Layout.fillWidth: true
+        spacing: 50
         PrefsComboBox{
-            anchors.centerIn: parent
+            model: SideListModel{}//["Adesh","Kabir","Raj","Adesh","Kabir","Raj","Adesh","Kabir","Raj"]
+        }
+        PrefsComboBoxLabel{
             model: SideListModel{}//["Adesh","Kabir","Raj","Adesh","Kabir","Raj","Adesh","Kabir","Raj"]
         }
     }

@@ -15,7 +15,7 @@ ComboBox {
         focus: true
 
         background: Rectangle{
-            color: itemDelegate.hovered ? "blue" : "transparent"
+            color: itemDelegate.hovered ? "#0437F2" : "transparent"
             anchors.fill: parent
             radius: 8
         }
@@ -110,7 +110,9 @@ ComboBox {
         implicitWidth: 200
         implicitHeight: 41
         color: root.down ? Qt.darker(root.checkedColor, 1.2) : root.checkedColor
-        radius: 4
+        radius: 6
+        border.width: 0.6
+        border.color: "grey"
     }
 
     popup: Popup {
@@ -130,8 +132,9 @@ ComboBox {
 
         background: Rectangle {
             anchors.fill: parent
-            color: "#dde4de"
-            radius: 4
+            radius: 6
+            border.width: 0.6
+            border.color: "grey"
             clip: true
         }
     }

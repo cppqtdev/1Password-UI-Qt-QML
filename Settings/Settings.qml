@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.3
-
+import "../GameScreens"
 ApplicationWindow {
     id:root
     visible: true
@@ -82,11 +82,16 @@ ApplicationWindow {
             SplitView.fillWidth: true
             color: "#fafbfb"
             clip: true
-            Text {
-                anchors.centerIn: parent
-                font.pixelSize: 24
-                text: "NOT COLLAPSED"
-                Behavior on rotation { NumberAnimation { duration: 100 } }
+            Loader{
+                id:mainLoader
+                anchors.fill: parent
+                StackView{
+                    id:mainStack
+                    anchors.fill: parent
+                    initialItem: GeneralSettingsPage{
+                        anchors.fill: parent
+                    }
+                }
             }
         }
     }
