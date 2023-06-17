@@ -7,7 +7,6 @@ ComboBox {
 
     delegate:ItemDelegate {
         id:itemDelegate
-        property string iconRectColor: iconColor ? iconColor : ""
         property string iconRectIcon: iconName ? iconName : ""
 
         width: root.width * 1.4
@@ -30,23 +29,6 @@ ComboBox {
             Layout.leftMargin: 10
             Layout.rightMargin: 10
 
-            Rectangle{
-                id:iconImageRect
-                visible:iconRectIcon
-                width: parent.height * 0.6
-                height: parent.height * 0.6
-                color: iconRectColor
-                Layout.alignment: Qt.AlignVCenter
-                Layout.leftMargin: 10
-                radius: 6
-
-                Label{
-                    text: iconRectIcon
-                    font.pointSize: 8
-                    anchors.centerIn: parent
-                }
-            }
-
             Label {
                 opacity: 0.87
                 font.pointSize: 12
@@ -56,7 +38,7 @@ ComboBox {
                 verticalAlignment: Image.AlignVCenter
                 Layout.alignment: Qt.AlignVCenter
                 color: itemDelegate.hovered ? "white" : Qt.darkGray
-                Layout.leftMargin: iconImageRect.visible ? 0 : 10
+                Layout.leftMargin: 10
             }
 
             Label {
@@ -108,23 +90,6 @@ ComboBox {
         RowLayout {
             anchors.fill: parent
             spacing: 10
-            Rectangle{
-                id:iconRect
-                visible: model.get(currentIndex).iconName ? true : false
-                width: parent.height * 0.6
-                height: parent.height * 0.6
-                color: model.get(currentIndex).iconColor
-                Layout.alignment: Qt.AlignVCenter
-                Layout.leftMargin: 5
-                radius: 6
-
-                Label{
-                    text: model.get(currentIndex).iconName
-                    font.pointSize: 8
-                    anchors.centerIn: parent
-                }
-            }
-
             Label {
                 opacity: 0.87
                 font.pointSize: 12
@@ -135,7 +100,7 @@ ComboBox {
                 Layout.alignment: Qt.AlignVCenter
                 color: Qt.darkGray
                 elide: Text.ElideRight
-                Layout.leftMargin:iconRect.visible ? 0 : 10
+                Layout.leftMargin: 10
             }
         }
 
