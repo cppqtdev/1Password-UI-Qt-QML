@@ -596,5 +596,8 @@
         <file>Settings/GeneralSettingsPage.qml</file>
         <file>common/PrefsComboBox.qml</file>
         <file>common/PrefsComboBoxLabel.qml</file>
+        <file>common/PrefsCheckbox.qml</file>
+        <file>common/PrefsCheckboxLable.qml</file>
+        <file>common/PrefsButton.qml</file>
     </qresource>
 </RCC>
