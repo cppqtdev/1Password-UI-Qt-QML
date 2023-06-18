@@ -3,11 +3,12 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.3
 ColumnLayout{
     Layout.fillWidth: true
+    property string title: qsTr("Format Secure Notes Using Markdown")
     property string description: qsTr("Example APP demonstrating Qt Quick Controls 2")
     spacing: 5
     CheckBox {
         id: control
-        text: qsTr("Format Secure Notes Using Markdown")
+        text: title
         checked: true
         font.pointSize: 12
         spacing: 15
@@ -17,9 +18,9 @@ ColumnLayout{
             x: control.leftPadding
             y: parent.height / 2 - height / 2
             radius: 5
-            color: control.checked ? "blue" : checkBoxHover.hovered ? "#dde4de" : "transparent"
+            color: control.checked ? "#0570eb" : checkBoxHover.hovered ? "#dde4de" : "transparent"
             border.width: 1
-            border.color: control.checked ? "blue" : "grey"
+            border.color: control.checked ? "#0570eb" : "grey"
             HoverHandler{
                 id:checkBoxHover
             }
