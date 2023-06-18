@@ -5,13 +5,77 @@ import "../GameScreens"
 ApplicationWindow {
     id:root
     visible: true
-    width: 800
-    height: 600
-    minimumWidth: 800
-    maximumWidth: 1280
-    minimumHeight: 600
+    width: 1100
+    height: 750
+    minimumWidth: 1100
+    maximumWidth: 1100
+    minimumHeight: 750
     maximumHeight: 750
     title: "Settings"
+
+    Component{
+        id:generalSettings
+        GeneralSettingsPage{}
+    }
+
+    Component{
+        id:appearanceSettings
+        AppearanceSettingsPage{}
+    }
+
+    Component{
+        id:securitySettings
+        SecuritySettingsPage{}
+    }
+    Component{
+        id:privaceSettings
+        PrivaceSettingsPage{}
+    }
+    Component{
+        id:browserSettings
+        BrowserSettingsPage{}
+    }
+    Component{
+        id:advancedSettings
+        AdvancedSettingsPage{}
+    }
+    Component{
+        id:developerSettings
+        DeveloperSettingsPage{}
+    }
+    Component{
+        id:aboutSettings
+        AboutPage{}
+    }
+
+    function switchPage(index){
+        switch(index){
+        case 0:
+            mainStack.replace(null,generalSettings)
+            break;
+        case 1:
+            mainStack.replace(null,appearanceSettings)
+            break;
+        case 2:
+            mainStack.replace(null,securitySettings)
+            break;
+        case 3:
+            mainStack.replace(null,privaceSettings)
+            break;
+        case 4:
+            mainStack.replace(null,browserSettings)
+            break;
+        case 5:
+            mainStack.replace(null,advancedSettings)
+            break;
+        case 6:
+            mainStack.replace(null,developerSettings)
+            break;
+        case 7:
+            mainStack.replace(null,aboutSettings)
+            break;
+        }
+    }
 
     SplitView {
         id: splitView
@@ -53,6 +117,10 @@ ApplicationWindow {
                 anchors.margins: 10
                 focus: true
                 highlightFollowsCurrentItem :true
+                onCurrentIndexChanged: {
+                    root.switchPage(currentIndex)
+                }
+
                 highlight: Rectangle
                 {
                     width: parent.height * 0.7
@@ -60,9 +128,18 @@ ApplicationWindow {
                     Layout.alignment: Qt.AlignVCenter
                     Layout.leftMargin: 10
                     radius: 8
-                    color:"blue"
-                    opacity: 0.7
+                    color:"#0570eb"
                     focus: true
+
+                    Rectangle{
+                        height: parent.height * 0.59
+                        width: 5
+                        color:"yellow"
+                        anchors.rightMargin: 5
+                        anchors.verticalCenter: parent.verticalCenter
+                        Layout.alignment: Qt.AlignRight
+                        radius: 4
+                    }
                 }
 
                 model: SideListModel{}
@@ -72,6 +149,7 @@ ApplicationWindow {
                     iconRectColor: iconColor
                     onClicked:{
                         ListView.view.currentIndex = index
+                        root.switchPage(index)
                     }
                 }
             }
@@ -89,7 +167,6 @@ ApplicationWindow {
                     id:mainStack
                     anchors.fill: parent
                     initialItem: GeneralSettingsPage{
-                        anchors.fill: parent
                     }
                 }
             }

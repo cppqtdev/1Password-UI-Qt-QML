@@ -5,7 +5,7 @@ Item {
     height: 40
     width: parent.width
     property int buttonWidthHeight: 30
-    property int buttonRadius: 12
+    property int buttonRadius: 6
     signal homeClicked()
     signal settingsCliked()
     signal menuClicked()

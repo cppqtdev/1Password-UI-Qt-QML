@@ -43,7 +43,6 @@ Item {
         border.width: borderWidth
         border.color:borderColor
         visible: !iconButton
-        opacity: 0.8
         Image{
             visible: sourceIcon
             source: sourceIcon

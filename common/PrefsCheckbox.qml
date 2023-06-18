@@ -13,9 +13,9 @@ CheckBox {
         x: control.leftPadding
         y: parent.height / 2 - height / 2
         radius: 5
-        color: control.checked ? "blue" : checkBoxHover.hovered ? "#dde4de" : "transparent"
+        color: control.checked ? "#0570eb" : checkBoxHover.hovered ? "#dde4de" : "transparent"
         border.width: 1
-        border.color: control.checked ? "blue" : "grey"
+        border.color: control.checked ? "#0570eb" : "grey"
         HoverHandler{
             id:checkBoxHover
         }

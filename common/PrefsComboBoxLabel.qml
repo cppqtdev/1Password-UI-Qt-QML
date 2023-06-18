@@ -15,7 +15,7 @@ ComboBox {
         focus: true
 
         background: Rectangle{
-            color: itemDelegate.hovered ? "#0437F2" : "transparent"
+            color: itemDelegate.hovered ? "#0570eb" : "transparent"
             anchors.fill: parent
             radius: 8
         }

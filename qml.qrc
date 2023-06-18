@@ -599,5 +599,19 @@
         <file>common/PrefsCheckbox.qml</file>
         <file>common/PrefsCheckboxLable.qml</file>
         <file>common/PrefsButton.qml</file>
+        <file>common/LablePrefsComboBox.qml</file>
+        <file>common/PrefsShortcutTextField.qml</file>
+        <file>Img/Basic/home.png</file>
+        <file>Img/Basic/Smart-Home-Automation-System.jpg</file>
+        <file>common/UserDelegate.qml</file>
+        <file>common/PrefsTextField.qml</file>
+        <file>Settings/AppearanceSettingsPage.qml</file>
+        <file>Settings/SecuritySettingsPage.qml</file>
+        <file>Settings/PrivaceSettingsPage.qml</file>
+        <file>Settings/BrowserSettingsPage.qml</file>
+        <file>Settings/AdvancedSettingsPage.qml</file>
+        <file>Settings/DeveloperSettingsPage.qml</file>
+        <file>Settings/AboutPage.qml</file>
+        <file>Img/Basic/undraw_programming_re_kg9v.svg</file>
     </qresource>
 </RCC>
