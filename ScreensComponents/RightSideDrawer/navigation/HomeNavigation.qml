@@ -8,9 +8,7 @@ import "../pages"
 StackView {
     id: navPane
     property string name: "HomeNavPane"
-
     initialItem: HomePage{}
-
     Loader {
         id: qtPageLoader
         active: true

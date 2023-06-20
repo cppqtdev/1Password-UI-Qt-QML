@@ -54,6 +54,8 @@ ScreenPage{
             }
 
             Label {
+                Layout.fillWidth: true
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 opacity: 0.87
                 font.pointSize: 10
                 text:qsTr("<a href='https://www.example.com'>Learn how watchtower protect your privacy.</a>")
@@ -71,5 +73,6 @@ ScreenPage{
             }
 
         }
+
     }
 }

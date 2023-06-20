@@ -1,13 +1,24 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
+import QtQuick.Controls.Styles 1.4
 
 CheckBox {
     id: control
-    text: qsTr("Format Secure Notes Using Markdown")
     checked: true
     font.pointSize: 12
     spacing: 15
+    contentItem:Label{
+        width: control.width
+        anchors.rightMargin: 10
+        leftPadding: indicatorRect.implicitWidth + control.spacing
+        text: control.text
+        verticalAlignment: Text.AlignVCenter
+        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+        font: control.font
+    }
+
     indicator: Rectangle {
+        id:indicatorRect
         implicitWidth: 22
         implicitHeight: 22
         x: control.leftPadding

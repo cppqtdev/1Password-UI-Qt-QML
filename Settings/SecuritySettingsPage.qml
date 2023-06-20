@@ -22,16 +22,19 @@ ScreenPage{
             spacing: 20
 
             PrefsCheckboxLable{
+                id:helloWindow
                 title: qsTr("Unlock using Window Hello")
                 description: qsTr("You'll still need to enter your account password after you restart. %1").arg("<a href='https://www.example.com'>About Window hello security.</a>")
             }
             PrefsCheckboxLable{
-                Layout.leftMargin: 20
+                visible: helloWindow.checked
+                Layout.leftMargin: 35
                 title: qsTr("Show Window Hello prompt automatically")
                 description: qsTr("Turn this off if Window hello is noot always accessible on your system.\nYou can still click the Window Hello button to unlock Windows Hello.")
             }
             PrefsCheckbox{
-                Layout.leftMargin: 20
+                visible: helloWindow.checked
+                Layout.leftMargin: 35
                 text: qsTr("Use the trusted Platform Module with Window Hello")
             }
 

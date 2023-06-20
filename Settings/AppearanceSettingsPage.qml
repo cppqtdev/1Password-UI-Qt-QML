@@ -42,6 +42,28 @@ ScreenPage{
                 Layout.leftMargin: 10
             }
 
+            RowLayout{
+                spacing: 30
+                Layout.leftMargin: 5
+                PrefsDensity{
+                    id:left
+                    spacing: 6
+                    onClicked: {
+                        left.borderColor = "#0570eb"
+                        right.borderColor = "grey"
+                    }
+                }
+                PrefsDensity{
+                    id:right
+                    borderColor: "#0570eb"
+                    spacing: 2
+                    onClicked: {
+                        left.borderColor = "grey"
+                        right.borderColor = "#0570eb"
+                    }
+                }
+            }
+
             // impliment Compact and confortable
 
             Label {
@@ -59,6 +81,7 @@ ScreenPage{
             // Iterface increase
             PrefsSpinBox {
                 id: spinBox
+                Layout.leftMargin: 5
                 width: 100
                 height: 30
                 minimumValue: 0

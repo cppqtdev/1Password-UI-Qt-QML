@@ -1,81 +1,103 @@
 import QtQuick 2.9
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2
-import QtQuick.Controls.Material 2.2
 import "../../../common"
-Flickable {
-    id: flickable
-    contentHeight: root.implicitHeight
-    property string name: "PageThree"
+import "../../../Settings"
+import "../../../GameScreens"
+ScreenPage{
+    id:root
+    contentHeight: mainLayout.implicitHeight
     Pane {
-        id: root
         anchors.fill: parent
-        ColumnLayout {
-            anchors.right: parent.right
-            anchors.left: parent.left
-            LabelHeadline {
-                leftPadding: 10
-                text: qsTr("GoTo next Subway Station")
-            }
-            RowLayout {
-                Rectangle {
-                    //anchors.right: parent.right
-                    width: 6
-                    height: 48
-                }
-            }
-            HorizontalDivider {}
-            RowLayout {
-                LabelSubheading {
-                    topPadding: 6
-                    bottomPadding: 6
-                    leftPadding: 10
-                    rightPadding: 10
-                    wrapMode: Text.WordWrap
-                    text: qsTr("Example APP demonstrating Qt Quick Controls 2\n\n")
-                }
-            }
-            RowLayout {
-                LabelSubheading {
-                    topPadding: 6
-                    leftPadding: 10
-                    rightPadding: 10
-                    wrapMode: Text.WordWrap
-                    text: qsTr("Subway is a normal Page.\nNavigation Drawer can be opened swiping from left or tapping on Menu Button.\nSubway has a colored Marker in Drawer\n")
-                }
-            }
-            RowLayout {
-                LabelBodySecondary {
-                    topPadding: 6
-                    leftPadding: 10
-                    rightPadding: 10
-                    wrapMode: Text.WordWrap
-                    text: qsTr("Activation Policy: ")
-                }
-                LabelBody {
-                    topPadding: 6
-                    leftPadding: 10
-                    rightPadding: 10
-                    wrapMode: Text.WordWrap
-                    text: qsTr("WHILE SELECTED")
-                }
-            }
-            HorizontalDivider {}
-        } // col layout
-    } // pane root
-    ScrollIndicator.vertical: ScrollIndicator { }
+        clip: true
+        background: Rectangle{
+            anchors.fill: parent
+            color: "transparent"
+        }
 
-    // emitting a Signal could be another option
+        ColumnLayout{
+            id: mainLayout
+            anchors.left: parent.left
+            anchors.right: parent.right
+            spacing: 20
+
+            LablePrefsComboBox{
+                label:qsTr("Release channel :")
+                model: SideListModel{}
+            }
+
+            Label {
+                Layout.fillWidth: true
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                opacity: 0.87
+                font.pointSize: 10
+                text:qsTr("Betas and Nighlies are published more often. They include less-tested features and improvements.")
+                font.weight: Font.Medium
+                Layout.alignment: Qt.AlignLeft
+                color: "black"
+                elide: Text.ElideRight
+                Layout.leftMargin: 10
+            }
+
+
+            PrefsCheckbox{
+                text: qsTr("Install update automatically")
+            }
+
+            LablePrefsComboBox{
+                label:qsTr("Language :")
+                model: SideListModel{}
+            }
+
+            PrefsCheckboxLable{
+                title: qsTr("Show debugging tools")
+                description: qsTr("Extra menu option to copy item JSON and UUID.")
+            }
+
+            PrefsCheckboxLable{
+                title: qsTr("Show auto-saved web details")
+                description: qsTr("These were auto-saved when item was created and are likely redundant.")
+            }
+            PrefsCheckboxLable{
+                title: qsTr("Use Hardware Acceleration")
+                description: qsTr("Turn this off if you're experiencing visual performace issue.")
+            }
+            PrefsCheckbox{
+                text: qsTr("Keep item detail windows on top")
+            }
+            PrefsCheckboxLable{
+                title: qsTr("Auto-detect network settings")
+                description: qsTr("Turn this off if you have a proxy,but need to connect to a direct network connection.")
+            }
+
+            PrefsButton{
+                Layout.leftMargin: 8
+                width: innerText.width + 40
+                height: 38
+                buttonText: "Send Diagnostics";
+                innerText.color: "#0570eb"
+                color: "transparent"
+                hoverColor: "transparent"
+                pressColor: "transparent"
+                borderColor:"#0570eb"
+                fontSize: 12
+                borderWidth: 1
+                borderRadius: 8
+                onClicked: {
+                }
+            }
+             HorizontalDivider {}
+
+        }
+    }
     Component.onDestruction: {
         cleanup()
     }
-    // called immediately after Loader.loaded
     function init() {
-        console.log(qsTr("Init done from Subway"))
+        console.log(qsTr("Init done from Car"))
     }
-    // called from Component.destruction
     function cleanup() {
-        console.log(qsTr("Cleanup done from Subway"))
+        console.log(qsTr("Cleanup done from Car"))
     }
-} // flickable
+}
 

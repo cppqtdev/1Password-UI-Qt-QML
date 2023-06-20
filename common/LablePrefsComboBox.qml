@@ -9,11 +9,13 @@ RowLayout {
     Layout.fillWidth: true
     spacing: 10
     Label {
+        width: parent.width * 0.50
+        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         opacity: 0.87
         font.pointSize: 12
         text:label
         font.weight: Font.Medium
-        verticalAlignment: Image.AlignVCenter
+        verticalAlignment: Text.AlignVCenter
         Layout.alignment: Qt.AlignVCenter
         color: "black"
         elide: Text.ElideRight

@@ -34,6 +34,8 @@ ScreenPage{
             }
 
             Label {
+                Layout.fillWidth: true
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 opacity: 0.87
                 font.pointSize: 10
                 text:qsTr("SSH agent runs in the background and allow you to use SSH with keys from your Private vault.")
@@ -44,8 +46,8 @@ ScreenPage{
                 Layout.leftMargin: 10
             }
 
-            PrefsButton
-            {
+            PrefsButton {
+                Layout.leftMargin: 8
                 width: innerText.width + 40
                 height: 38
                 buttonText: "Set Up SSH Agent ...";
@@ -61,6 +63,8 @@ ScreenPage{
                 }
             }
             Label {
+                Layout.fillWidth: true
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 opacity: 0.87
                 font.pointSize: 10
                 text:qsTr("%1").arg("<a href='https://www.example.com'>Learn more about the 1Password SSH Agent.</a>")
@@ -72,6 +76,8 @@ ScreenPage{
             }
 
             Label {
+                Layout.fillWidth: true
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 opacity: 0.87
                 font.pointSize: 14
                 text:qsTr("Command-Line interface (CLI)")

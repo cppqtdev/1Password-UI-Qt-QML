@@ -1,73 +1,84 @@
 import QtQuick 2.9
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2
-import QtQuick.Controls.Material 2.2
 import "../../../common"
-Flickable {
-    id: flickable
-    contentHeight: root.implicitHeight
-    property string name: "PageTwo"
+import "../../../Settings"
+import "../../../GameScreens"
+ScreenPage{
+    id:root
+    contentHeight: mainLayout.implicitHeight
     Pane {
-        id: root
         anchors.fill: parent
-        ColumnLayout {
-            anchors.right: parent.right
-            anchors.left: parent.left
-            LabelHeadline {
-                leftPadding: 10
-                text: qsTr("Take a Bus")
-            }
-            HorizontalDivider {}
-            RowLayout {
-                LabelSubheading {
-                    topPadding: 6
-                    bottomPadding: 6
-                    leftPadding: 10
-                    rightPadding: 10
-                    wrapMode: Text.WordWrap
-                    text: qsTr("Example APP demonstrating Qt Quick Controls 2\n\n")
-                }
-            }
-            RowLayout {
-                LabelSubheading {
-                    topPadding: 6
-                    leftPadding: 10
-                    rightPadding: 10
-                    wrapMode: Text.WordWrap
-                    text: qsTr("Bus is a normal Page.\nNavigation Drawer can be opened swiping from left or tapping on Menu Button.\n")
-                }
-            }
-            RowLayout {
-                LabelBodySecondary {
-                    topPadding: 6
-                    leftPadding: 10
-                    rightPadding: 10
-                    wrapMode: Text.WordWrap
-                    text: qsTr("Activation Policy: ")
-                }
-                LabelBody {
-                    topPadding: 6
-                    leftPadding: 10
-                    rightPadding: 10
-                    wrapMode: Text.WordWrap
-                    text: qsTr("LAZY")
-                }
-            }
-            HorizontalDivider {}
-        } // col layout
-    } // pane root
-    ScrollIndicator.vertical: ScrollIndicator { }
+        clip: true
+        background: Rectangle{
+            anchors.fill: parent
+            color: "transparent"
+        }
 
-    // emitting a Signal could be another option
+        ColumnLayout{
+            id: mainLayout
+            anchors.left: parent.left
+            anchors.right: parent.right
+            spacing: 20
+
+            PrefsCheckboxLable{
+                title: qsTr("Show app and website icons")
+                description: qsTr("1password will download and display site and app icons on your logins and software licenses. %1").arg("<a href='https://www.example.com'>Learn more about rich icons and your privacy.</a>")
+            }
+
+            Label {
+                opacity: 0.87
+                font.pointSize: 14
+                text:qsTr("Watchtower")
+                font.weight: Font.Medium
+                font.bold: true
+                Layout.alignment: Qt.AlignLeft
+                color: "black"
+                elide: Text.ElideRight
+                Layout.leftMargin: 10
+            }
+
+            PrefsCheckboxLable{
+                title: qsTr("Check for compromised websites")
+                description: qsTr("Check saved websites for recent security breaches. No information about your items leaves your devce.")
+            }
+
+            PrefsCheckboxLable{
+                title: qsTr("Check for vulnerable passwords")
+                description: qsTr("Look up saved passwords in an online database of security exploit provided by haveibeenpwned.com. This feature may pose a small risk to people who reuse similar passwords. %1").arg("<a href='https://www.example.com'>Learn more.</a>")
+            }
+
+            PrefsCheckboxLable{
+                title: qsTr("Check for two-factor authentication")
+                description: qsTr("Check for login items that support two factor authentication. No information about your items leaves your device.")
+            }
+
+            Label {
+                Layout.fillWidth: true
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                opacity: 0.87
+                font.pointSize: 10
+                text:qsTr("<a href='https://www.example.com'>Learn how watchtower protect your privacy.</a>")
+                font.weight: Font.Medium
+                font.bold: true
+                Layout.alignment: Qt.AlignLeft
+                color: "black"
+                elide: Text.ElideRight
+                Layout.leftMargin: 10
+            }
+            HorizontalDivider {}
+
+        }
+
+    }
     Component.onDestruction: {
         cleanup()
     }
-    // called immediately after Loader.loaded
     function init() {
-        console.log(qsTr("Init done from Bus"))
+        console.log(qsTr("Init done from Car"))
     }
-    // called from Component.destruction
     function cleanup() {
-        console.log(qsTr("Cleanup done from Bus"))
+        console.log(qsTr("Cleanup done from Car"))
     }
-} // flickable
+}
+
