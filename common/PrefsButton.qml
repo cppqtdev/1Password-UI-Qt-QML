@@ -17,7 +17,7 @@ Item {
      property color borderColor: "white"
     property string sourceIcon: ""
     property int fontSize: 16
-    property int borderWidth: 1
+    property real borderWidth: 1
     property int borderRadius: 2
     property int iconWidth: 20
     property int iconHeight: 20
