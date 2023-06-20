@@ -5,10 +5,10 @@ import "../GameScreens"
 ApplicationWindow {
     id:root
     visible: true
-    width: 1100
+    width: 1000
     height: 750
-    minimumWidth: 1100
-    maximumWidth: 1100
+    minimumWidth: 1000
+    maximumWidth: 1000
     minimumHeight: 750
     maximumHeight: 750
     title: "Settings"

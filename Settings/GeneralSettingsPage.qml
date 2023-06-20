@@ -51,6 +51,8 @@ ScreenPage{
             }
 
             Label {
+                Layout.fillWidth: true
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 opacity: 0.87
                 font.pointSize: 10
                 text:qsTr("Set a default location for saving new items on this device , or let 1password make a suggestion.")
@@ -153,36 +155,6 @@ ScreenPage{
                 Layout.fillWidth: true
                 height: 10
             }
-
-            //        PrefsComboBox{
-            //            model: SideListModel{}//["Adesh","Kabir","Raj","Adesh","Kabir","Raj","Adesh","Kabir","Raj"]
-            //        }
-            //        PrefsCheckbox{
-
-            //        }
-            //        PrefsCheckboxLable{
-            //            description: qsTr("Example APP demonstrating Qt Quick Controls 2 %1").arg("<a href='https://www.example.com'>Click me!</a>")
-            //        }
-            //        PrefsButton
-            //        {
-            //            width: innerText.width + 40
-            //            height: 38
-            //            buttonText: "Send Diagnostics";
-            //            innerText.color: "#4169E1"
-            //            color: "transparent"
-            //            hoverColor: "#A7C7E7"
-            //            pressColor: "#A7C7E7"
-            //            borderColor: "#4169E1"
-            //            fontSize: 12
-            //            borderWidth: 1
-            //            borderRadius: 8
-            //            onClicked: {
-            //            }
-            //        }
-            //        LablePrefsComboBox{
-            //            model: SideListModel{}
-            //        }
-            //        PrefsTextField{}
         }
     }
 }

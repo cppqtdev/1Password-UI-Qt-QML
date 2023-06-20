@@ -615,5 +615,7 @@
         <file>Img/Basic/undraw_programming_re_kg9v.svg</file>
         <file>common/PrefsSpinBox.qml</file>
         <file>Img/Basic/pngwing.com.png</file>
+        <file>common/PrefsDensity.qml</file>
+        <file>AddItemScreen/AddItemDialog.qml</file>
     </qresource>
 </RCC>

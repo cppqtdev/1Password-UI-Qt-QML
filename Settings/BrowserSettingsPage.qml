@@ -26,8 +26,8 @@ ScreenPage{
                 description: qsTr("When you connect the 1password app and browser extension, it makes it easier to unlock and fill passwords.")
             }
 
-            PrefsButton
-            {
+            PrefsButton {
+                Layout.leftMargin: 8
                 width: innerText.width + 40
                 height: 38
                 buttonText: "Get 1Password for Your Browser";

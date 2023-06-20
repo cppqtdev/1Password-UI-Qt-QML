@@ -2,7 +2,9 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.3
 ColumnLayout{
+    id:root
     Layout.fillWidth: true
+    property alias checked: control.checked
     property string title: qsTr("Format Secure Notes Using Markdown")
     property string description: qsTr("Example APP demonstrating Qt Quick Controls 2")
     spacing: 5
@@ -12,7 +14,17 @@ ColumnLayout{
         checked: true
         font.pointSize: 12
         spacing: 15
+        contentItem:Label{
+            width: root.width
+            Layout.rightMargin: 10
+            leftPadding: indicatorRect.implicitWidth + control.spacing
+            text: control.text
+            verticalAlignment: Text.AlignVCenter
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            font: control.font
+        }
         indicator: Rectangle {
+            id:indicatorRect
             implicitWidth: 22
             implicitHeight: 22
             x: control.leftPadding
@@ -38,10 +50,11 @@ ColumnLayout{
     }
 
     LabelSubheading {
+        Layout.fillWidth: true
         width: root.width
         leftPadding: control.spacing + 22 + spacing
         rightPadding: 10
-        wrapMode: Text.WordWrap
+        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         font.pointSize: control.font.pointSize - 1
         text:description
         // Open the link in a browser when clicked

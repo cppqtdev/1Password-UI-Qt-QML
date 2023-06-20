@@ -9,6 +9,7 @@ import "./GameScreens"
 import "./ScreensComponents/LeftSideDrawer"
 import "./ScreensComponents/RightSideDrawer"
 import "./Settings"
+import "./AddItemScreen"
 ApplicationWindow {
     id:root
     width: 1280
@@ -99,10 +100,10 @@ ApplicationWindow {
     property real opacityCaption: secondaryTextOpacity
 
     property var navigationModel: [
-        {"type": "qrc:/ScreensComponents/RightSideDrawer/navigation/DrawerNavigationButton.qml", "name": "Home", "icon": "home.png", "source": "qrc:/ScreensComponents/RightSideDrawer/navigation/HomeNavigation.qml", "showCounter":false, "showMarker":false, "a_p":1},
-        {"type": "qrc:/ScreensComponents/RightSideDrawer/navigation/DrawerNavigationButton.qml", "name": "New Game", "icon": "car.png", "source": "qrc:/ScreensComponents/RightSideDrawer/pages/PageOne.qml", "showCounter":true, "showMarker":false, "a_p":2},
-        {"type": "qrc:/ScreensComponents/RightSideDrawer/navigation/DrawerNavigationButton.qml", "name": "Configuration", "icon": "bus.png", "source": "qrc:/ScreensComponents/RightSideDrawer/pages/PageTwo.qml", "showCounter":false, "showMarker":false, "a_p":2},
-        {"type": "qrc:/ScreensComponents/RightSideDrawer/navigation/DrawerNavigationButton.qml", "name": "Settings", "icon": "subway.png", "source": "qrc:/ScreensComponents/RightSideDrawer/pages/PageThree.qml", "showCounter":false, "showMarker":true, "a_p":3},
+        {"type": "qrc:/ScreensComponents/RightSideDrawer/navigation/DrawerNavigationButton.qml", "name": "General", "icon": "home.png", "source": "qrc:/ScreensComponents/RightSideDrawer/navigation/HomeNavigation.qml", "showCounter":false, "showMarker":false, "a_p":1},
+        {"type": "qrc:/ScreensComponents/RightSideDrawer/navigation/DrawerNavigationButton.qml", "name": "Security", "icon": "car.png", "source": "qrc:/ScreensComponents/RightSideDrawer/pages/PageOne.qml", "showCounter":true, "showMarker":false, "a_p":2},
+        {"type": "qrc:/ScreensComponents/RightSideDrawer/navigation/DrawerNavigationButton.qml", "name": "Privacy", "icon": "bus.png", "source": "qrc:/ScreensComponents/RightSideDrawer/pages/PageTwo.qml", "showCounter":false, "showMarker":false, "a_p":2},
+        {"type": "qrc:/ScreensComponents/RightSideDrawer/navigation/DrawerNavigationButton.qml", "name": "Advanced", "icon": "subway.png", "source": "qrc:/ScreensComponents/RightSideDrawer/pages/PageThree.qml", "showCounter":false, "showMarker":true, "a_p":3},
     ]
     property var navigationData: [
         {"counter":0, "marker":""},
@@ -161,7 +162,9 @@ ApplicationWindow {
         }
     }
 
-
+    AddItemDialog{
+        id:addItemDialog
+    }
 
     header: TitleBar{
         id:titlebar
@@ -169,7 +172,11 @@ ApplicationWindow {
             drawer.open()
         }
         onHomeClicked: {
-            mainStack.pop(null)
+            //mainStack.pop(null)
+            //addItemDialog.open()
+            var component = Qt.createComponent("qrc:/AddItemScreen/AddItemDialog.qml");
+            var win = component.createObject(root);
+            win.show();
         }
         onHelpCliked: {
             var component = Qt.createComponent("qrc:/Settings/Settings.qml");
@@ -271,7 +278,7 @@ ApplicationWindow {
     //RightSide Drawer
     Drawer{
         id:settingsDrawer
-        width: parent.width*0.33
+        width: parent.width*0.40
         height: root.height
         edge: Qt.RightEdge
         contentItem:Page{

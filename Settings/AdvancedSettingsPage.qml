@@ -27,6 +27,8 @@ ScreenPage{
             }
 
             Label {
+                Layout.fillWidth: true
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 opacity: 0.87
                 font.pointSize: 10
                 text:qsTr("Betas and Nighlies are published more often. They include less-tested features and improvements.")
@@ -69,6 +71,7 @@ ScreenPage{
             }
 
             PrefsButton{
+                Layout.leftMargin: 8
                 width: innerText.width + 40
                 height: 38
                 buttonText: "Send Diagnostics";
@@ -89,5 +92,6 @@ ScreenPage{
             }
 
         }
+
     }
 }
