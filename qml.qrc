@@ -613,5 +613,7 @@
         <file>Settings/DeveloperSettingsPage.qml</file>
         <file>Settings/AboutPage.qml</file>
         <file>Img/Basic/undraw_programming_re_kg9v.svg</file>
+        <file>common/PrefsSpinBox.qml</file>
+        <file>Img/Basic/pngwing.com.png</file>
     </qresource>
 </RCC>

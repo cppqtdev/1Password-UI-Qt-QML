@@ -1,4 +1,4 @@
-QT += quick
+QT += qml quick widgets
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -6,7 +6,8 @@ QT += quick
 
 SOURCES += \
         applicationui.cpp \
-        main.cpp
+        main.cpp \
+        systemtray.cpp
 
 RESOURCES += qml.qrc
 
@@ -23,4 +24,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     applicationui.hpp \
+    systemtray.h \
     uiconstants.hpp

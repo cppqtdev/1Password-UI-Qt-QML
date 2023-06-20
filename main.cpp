@@ -1,14 +1,18 @@
-#include <QGuiApplication>
+#include <QScreen>
+#include <QApplication>
 #include <QQmlApplicationEngine>
-#include <QDebug>
 #include <QQmlContext>
+#include <QSystemTrayIcon>
+#include <QtQml/QQmlContext>
+#include<QIcon>
+#include <QDebug>
 #include <QtCore/QUrl>
 #include <QtCore/QCommandLineOption>
 #include <QtCore/QCommandLineParser>
 #include <QStyleHints>
-#include <QScreen>
-#include <QtQml/QQmlContext>
-#include<QIcon>
+
+#include <systemtray.h>
+
 class Utils : public QObject {
     Q_OBJECT
 public:
@@ -20,16 +24,25 @@ public:
 int main(int argc, char *argv[])
 {
     //! [0]
-    QGuiApplication app(argc, argv);
-    app.setWindowIcon(QIcon("qrc:/Img/Icons/hire-a-helper.svg"));
+    QApplication app(argc, argv);
+
+    QQmlApplicationEngine engine;
+    app.setOrganizationName("Aksh Software Solution");
+    app.setOrganizationName("akshsoftsolution.com");
+    app.setApplicationDisplayName("Aksh Software");
+    app.setApplicationName("Aksh Software");
+    app.setWindowIcon(QIcon(":/Img/Basic/pngwing.com.png"));
     //! [0]
-    QGuiApplication::setApplicationDisplayName(QCoreApplication::translate("main","Game Example"));
     ApplicationUI appui;
     QCommandLineParser parser;
     QCoreApplication::setApplicationVersion(QT_VERSION_STR);
 
-    QQmlApplicationEngine engine;
+
+
     QQmlContext *context = engine.rootContext();
+    SystemTray * systemTray = new SystemTray();
+
+    context->setContextProperty("systemTray", systemTray);
     context->setContextProperty("myApp", &appui);
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));

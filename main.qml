@@ -119,7 +119,47 @@ ApplicationWindow {
     property bool showFavorites: true
     property bool highlightActiveNavigationButton : true
 
+    // Chance to ignore the checkbox
+    property bool ignoreCheck: false
 
+    /* With help Connections object
+     * set connections with System tray class
+     * */
+
+    Connections {
+        target: systemTray
+        function onSignalShow() {
+            root.show();
+        }
+
+        // The signal - close the application by ignoring the check-box
+        function onSignalQuit() {
+            ignoreCheck = true
+            close();
+        }
+
+        // Minimize / maximize the window by clicking on the default system tray
+        function onSignalIconActivated() {
+             if(root.visibility === Window.Hidden) {
+                 root.show()
+             } else {
+                 root.hide()
+             }
+        }
+    }
+
+    // Handler window closing event
+    onClosing: {
+        /* If the check box should not be ignored and it is active,
+         * then hide the application. Otherwise, close the application
+         * */
+        if(ignoreCheck === false){
+            close.accepted = false
+            root.hide()
+        } else {
+            Qt.quit()
+        }
+    }
 
 
 

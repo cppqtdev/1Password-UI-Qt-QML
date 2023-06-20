@@ -74,8 +74,8 @@ ScreenPage{
                 buttonText: "Send Diagnostics";
                 innerText.color: "#0570eb"
                 color: "transparent"
-                hoverColor: "#0570eb"
-                pressColor: "#0570eb"
+                hoverColor: "transparent"
+                pressColor: "transparent"
                 borderColor:"#0570eb"
                 fontSize: 12
                 borderWidth: 1

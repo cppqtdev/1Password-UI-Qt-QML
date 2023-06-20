@@ -57,6 +57,14 @@ ScreenPage{
             }
 
             // Iterface increase
+            PrefsSpinBox {
+                id: spinBox
+                width: 100
+                height: 30
+                minimumValue: 0
+                maximumValue: 100
+            }
+
 
             Label {
                 opacity: 0.87
