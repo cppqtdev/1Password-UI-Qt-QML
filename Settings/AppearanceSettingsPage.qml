@@ -30,16 +30,8 @@ ScreenPage{
                 text:qsTr("Use device accent color")
             }
 
-            Label {
-                opacity: 0.87
-                font.pointSize: 14
-                text:qsTr("Density")
-                font.weight: Font.Medium
-                font.bold: true
-                Layout.alignment: Qt.AlignLeft
-                color: "black"
-                elide: Text.ElideRight
-                Layout.leftMargin: 10
+            PrefsSettingsHeader{
+                text: qsTr("Density")
             }
 
             RowLayout{
@@ -64,18 +56,8 @@ ScreenPage{
                 }
             }
 
-            // impliment Compact and confortable
-
-            Label {
-                opacity: 0.87
-                font.pointSize: 14
-                text:qsTr("Interface Zoom")
-                font.weight: Font.Medium
-                font.bold: true
-                Layout.alignment: Qt.AlignLeft
-                color: "black"
-                elide: Text.ElideRight
-                Layout.leftMargin: 10
+            PrefsSettingsHeader{
+                text: qsTr("Interface Zoom")
             }
 
             // Iterface increase
@@ -88,17 +70,8 @@ ScreenPage{
                 maximumValue: 100
             }
 
-
-            Label {
-                opacity: 0.87
-                font.pointSize: 14
-                text:qsTr("Always Show in Sidebar")
-                font.weight: Font.Medium
-                font.bold: true
-                Layout.alignment: Qt.AlignLeft
-                color: "black"
-                elide: Text.ElideRight
-                Layout.leftMargin: 10
+            PrefsSettingsHeader{
+                text: qsTr("Always Show in Sidebar")
             }
 
             PrefsCheckbox{

@@ -24,13 +24,13 @@ ScreenPage{
             PrefsCheckboxLable{
                 id:helloWindow
                 title: qsTr("Unlock using Window Hello")
-                description: qsTr("You'll still need to enter your account password after you restart. <a href='https://www.example.com'>About Window hello security.</a>")
+                description: qsTr("You'll still need to enter your account password after you restart. %1").arg("<a href='https://www.example.com'>About Window hello security.</a>")
             }
             PrefsCheckboxLable{
                 visible: helloWindow.checked
                 Layout.leftMargin: 35
                 title: qsTr("Show Window Hello prompt automatically")
-                description: qsTr("Turn this off if Window hello is not always accessible on your system. \nYou can still click the Window Hello button to unlock Windows Hello.")
+                description: qsTr("Turn this off if Window hello is noot always accessible on your system.\nYou can still click the Window Hello button to unlock Windows Hello.")
             }
             PrefsCheckbox{
                 visible: helloWindow.checked
@@ -42,51 +42,33 @@ ScreenPage{
                 label:qsTr("Require Password")
                 model: SideListModel{}
             }
-            Label {
-                opacity: 0.87
-                font.pointSize: 14
-                text:qsTr("Auto-lock")
-                font.weight: Font.Medium
-                font.bold: true
-                Layout.alignment: Qt.AlignLeft
-                color: "black"
-                elide: Text.ElideRight
-                Layout.leftMargin: 10
+
+            PrefsSettingsHeader{
+                text: qsTr("Auto-lock")
             }
+
             PrefsCheckboxLable{
                 title: qsTr("Lock 1password when computer locks")
                 description: qsTr("On sleep,screen saver,and fast user switching.")
             }
+
             LablePrefsComboBox{
-                label:qsTr("Lock after the system idle")
+                label:qsTr("Lock after the system is idle for")
                 model: SideListModel{}
             }
 
-            Label {
-                opacity: 0.87
-                font.pointSize: 14
-                text:qsTr("Clipboard")
-                font.weight: Font.Medium
-                font.bold: true
-                Layout.alignment: Qt.AlignLeft
-                color: "black"
-                elide: Text.ElideRight
-                Layout.leftMargin: 10
+            PrefsSettingsHeader{
+                text: qsTr("Clipboard")
             }
+
             PrefsCheckbox{
-                text: qsTr("Remove copied information and authentication \ncodes after 90 seconds")
+                text: qsTr("Remove copied information and authentication codes after 90 seconds")
             }
-            Label {
-                opacity: 0.87
-                font.pointSize: 14
-                text:qsTr("Concealed Field")
-                font.weight: Font.Medium
-                font.bold: true
-                Layout.alignment: Qt.AlignLeft
-                color: "black"
-                elide: Text.ElideRight
-                Layout.leftMargin: 10
+
+            PrefsSettingsHeader{
+                text: qsTr("Concealed Field")
             }
+
             PrefsCheckbox{
                 text: qsTr("Always show password and full credit card number")
             }
@@ -94,8 +76,13 @@ ScreenPage{
             PrefsCheckbox{
                 text: qsTr("Hold Ctrl+Alt to toggle revealed fields")
             }
-            HorizontalDivider {}
+
+            Item{
+                Layout.fillWidth: true
+                height: 10
+            }
         }
+
     }
     Component.onDestruction: {
         cleanup()

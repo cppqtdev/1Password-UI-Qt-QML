@@ -3,6 +3,9 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.5
 //Implementation of the Button control.
+import "../common"
+import AppStyle 1.0
+import FontStyle 1.0
 Item {
     id: button
     width:innerText.width + 40
@@ -55,8 +58,11 @@ Item {
 
         Label {
             id: innerText
-            font.pointSize: fontSize
             anchors.centerIn: parent
+            font.family: FontStyle.getContentFont.name
+            font.pixelSize: AppStyle.t1
+            font.bold: Font.Normal
+            font.weight: Font.Normal
             visible: text
         }
     }

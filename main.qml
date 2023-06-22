@@ -10,6 +10,10 @@ import "./ScreensComponents/LeftSideDrawer"
 import "./ScreensComponents/RightSideDrawer"
 import "./Settings"
 import "./AddItemScreen"
+
+import FontStyle 1.0
+import AppStyle 1.0
+
 ApplicationWindow {
     id:root
     width: 1280

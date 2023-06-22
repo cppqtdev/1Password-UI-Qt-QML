@@ -26,16 +26,8 @@ ScreenPage{
                 description: qsTr("1password will download and display site and app icons on your logins and software licenses. %1").arg("<a href='https://www.example.com'>Learn more about rich icons and your privacy.</a>")
             }
 
-            Label {
-                opacity: 0.87
-                font.pointSize: 14
-                text:qsTr("Watchtower")
-                font.weight: Font.Medium
-                font.bold: true
-                Layout.alignment: Qt.AlignLeft
-                color: "black"
-                elide: Text.ElideRight
-                Layout.leftMargin: 10
+            PrefsSettingsHeader{
+                text: qsTr("Watchtower")
             }
 
             PrefsCheckboxLable{
@@ -53,18 +45,9 @@ ScreenPage{
                 description: qsTr("Check for login items that support two factor authentication. No information about your items leaves your device.")
             }
 
-            Label {
-                Layout.fillWidth: true
-                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                opacity: 0.87
-                font.pointSize: 10
-                text:qsTr("<a href='https://www.example.com'>Learn how watchtower protect your privacy.</a>")
-                font.weight: Font.Medium
-                font.bold: true
-                Layout.alignment: Qt.AlignLeft
-                color: "black"
-                elide: Text.ElideRight
-                Layout.leftMargin: 10
+            PrefsSettingsHeader{
+                isBold: false
+                text: qsTr("<a href='https://www.example.com'>Learn how watchtower protect your privacy.</a>")
             }
 
             Item{

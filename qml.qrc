@@ -617,5 +617,18 @@
         <file>Img/Basic/pngwing.com.png</file>
         <file>common/PrefsDensity.qml</file>
         <file>AddItemScreen/AddItemDialog.qml</file>
+        <file>fonts/Font Awesome 5 Brands-Regular-400.otf</file>
+        <file>fonts/Font Awesome 5 Free-Regular-400.otf</file>
+        <file>fonts/Font Awesome 5 Free-Solid-900.otf</file>
+        <file>fonts/Font Awesome 5 Pro-Light-300.otf</file>
+        <file>fonts/Font Awesome 5 Pro-Regular-400.otf</file>
+        <file>fonts/Font Awesome 5 Pro-Solid-900.otf</file>
+        <file>fonts/Nunito-Bold.ttf</file>
+        <file>fonts/Nunito-Light.ttf</file>
+        <file>fonts/Nunito-Medium.ttf</file>
+        <file>fonts/Nunito-Regular.ttf</file>
+        <file>AppStyle.qml</file>
+        <file>FontSystem.qml</file>
+        <file>common/PrefsSettingsHeader.qml</file>
     </qresource>
 </RCC>

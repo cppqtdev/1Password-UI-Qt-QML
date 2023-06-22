@@ -45,35 +45,17 @@ ScreenPage{
                 radius: 12
                 ColumnLayout{
                     anchors.centerIn: parent
-                    Label {
-                        opacity: 0.60
-                        font.pointSize:18
-                        text:qsTr("Aksh Singh")
-                        font.weight: Font.Medium
-                        font.bold: true
-                        color: "black"
+                    PrefsSettingsHeader{
                         Layout.alignment: Qt.AlignHCenter
-                        elide: Text.ElideRight
+                        text: qsTr("Aksh Singh")
                     }
-                    Label {
-                        opacity: 0.60
-                        font.pointSize:18
-                        text:qsTr("Embedded Software Engineer")
-                        font.weight: Font.Medium
-                        font.bold: true
+                    PrefsSettingsHeader{
                         Layout.alignment: Qt.AlignHCenter
-                        color: "black"
-                        elide: Text.ElideRight
+                        text: qsTr("Embedded Software Engineer")
                     }
-                    Label {
-                        opacity: 0.60
-                        font.pointSize:18
-                        text:qsTr("Hire Me :  akshworkmail@gmail.com")
-                        font.weight: Font.Medium
-                        font.bold: true
+                    PrefsSettingsHeader{
                         Layout.alignment: Qt.AlignHCenter
-                        color: "black"
-                        elide: Text.ElideRight
+                        text: qsTr("Hire Me :  akshworkmail@gmail.com")
                     }
                 }
             }
@@ -93,37 +75,25 @@ ScreenPage{
                         leftMargin: 20
                         verticalCenter: parent.verticalCenter
                     }
-                    Label {
-                        opacity: 0.6
-                        font.pointSize: 10
-                        text:qsTr("Software Updated (%1)").arg("<a href='https://www.example.com'>Release Note</a>")
-                        font.weight: Font.Medium
-                        font.bold: true
+                    PrefsSettingsHeader{
+                        isBold: false
                         Layout.alignment: Qt.AlignLeft
-                        color: "black"
-                        elide: Text.ElideRight
+                        text: qsTr("Software Updated (%1)").arg("<a href='https://www.example.com'>Release Note</a>")
                     }
 
-                    Label {
-                        opacity: 0.60
-                        font.pointSize:10
-                        text:qsTr("Software version (12.06.1885)")
-                        font.weight: Font.Medium
-                        font.bold: true
+                    PrefsSettingsHeader{
+                        isBold: false
                         Layout.alignment: Qt.AlignLeft
-                        color: "black"
-                        elide: Text.ElideRight
+                        text: qsTr("Software version (12.06.1885)")
                     }
                 }
 
                 PrefsButton{
-
                     anchors{
                         right: parent.right
                         rightMargin: 20
                         verticalCenter: parent.verticalCenter
                     }
-
                     width: innerText.width + 40
                     height: 38
                     buttonText: "Check For Updated";
@@ -151,45 +121,25 @@ ScreenPage{
                     anchors{
                        centerIn: parent
                     }
-                    Label {
-                        opacity: 0.6
-                        font.pointSize: 10
-                        text:qsTr("@ 2023 1Password. All rights resered.")
-                        font.weight: Font.Medium
-                        font.bold: true
+                    PrefsSettingsHeader{
+                        isBold: false
                         Layout.alignment: Qt.AlignHCenter
-                        color: "black"
-                        elide: Text.ElideRight
+                        text: qsTr("@ 2023 1Password. All rights resered.")
                     }
-                    Label {
-                        opacity: 0.87
-                        font.pointSize: 10
-                        text:qsTr("<a href='https://www.example.com'>Terms of Service</a>")
-                        font.weight: Font.Medium
-                        font.bold: true
+                    PrefsSettingsHeader{
+                        isBold: false
                         Layout.alignment: Qt.AlignHCenter
-                        color: "black"
-                        elide: Text.ElideRight
+                        text: qsTr("<a href='https://www.example.com'>Terms of Service</a>")
                     }
-                    Label {
-                        opacity: 0.87
-                        font.pointSize: 10
-                        text:qsTr("<a href='https://www.example.com'>Privacy Policy</a>")
-                        font.weight: Font.Medium
-                        font.bold: true
+                    PrefsSettingsHeader{
+                        isBold: false
                         Layout.alignment: Qt.AlignHCenter
-                        color: "black"
-                        elide: Text.ElideRight
+                        text: qsTr("<a href='https://www.example.com'>Privacy Policy</a>")
                     }
-                    Label {
-                        opacity: 0.87
-                        font.pointSize: 10
-                        text:qsTr("<a href='https://www.example.com'>Credits & Ackonowledgements</a>")
-                        font.weight: Font.Medium
-                        font.bold: true
+                    PrefsSettingsHeader{
+                        isBold: false
                         Layout.alignment: Qt.AlignHCenter
-                        color: "black"
-                        elide: Text.ElideRight
+                        text: qsTr("<a href='https://www.example.com'>Credits & Ackonowledgements</a>")
                     }
                 }
             }

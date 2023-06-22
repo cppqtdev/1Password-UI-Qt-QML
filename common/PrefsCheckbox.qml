@@ -2,10 +2,13 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Controls.Styles 1.4
 
+import FontStyle 1.0
+import AppStyle 1.0
+import "../"
 CheckBox {
     id: control
+    property bool isBold: false
     checked: true
-    font.pointSize: 12
     spacing: 15
     contentItem:Label{
         width: control.width
@@ -14,7 +17,10 @@ CheckBox {
         text: control.text
         verticalAlignment: Text.AlignVCenter
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-        font: control.font
+        font.family: FontStyle.getContentFont.name
+        font.pixelSize: isBold ? AppStyle.t1 : AppStyle.t1
+        font.bold: isBold ? Font.Bold : Font.Normal
+        font.weight: isBold ? Font.Bold : Font.Normal
     }
 
     indicator: Rectangle {
@@ -35,8 +41,10 @@ CheckBox {
             text: "+"
             color: "white"
             visible:control.checked
-            font.pointSize: 10
-            font.bold: true
+            font.family: FontStyle.getAwesomeRegular.name
+            font.pixelSize: isBold ? AppStyle.t1 : AppStyle.t1
+            font.bold: isBold ? Font.Bold : Font.Normal
+            font.weight: isBold ? Font.Bold : Font.Normal
             anchors.centerIn: parent
             bottomInset: 2
         }

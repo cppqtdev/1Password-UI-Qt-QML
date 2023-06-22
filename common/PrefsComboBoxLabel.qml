@@ -1,10 +1,15 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
+
+import "../"
+import FontStyle 1.0
+import AppStyle 1.0
+
 ComboBox {
     id: root
     property color checkedColor: "#dde4de"
-
+    property bool isBold: false
     delegate:ItemDelegate {
         id:itemDelegate
         property string iconRectIcon: iconName ? iconName : ""
@@ -31,10 +36,12 @@ ComboBox {
 
             Label {
                 opacity: 0.87
-                font.pointSize: 12
                 text: name
                 Layout.fillWidth: true
-                font.weight: Font.Medium
+                font.family: FontStyle.getContentFont.name
+                font.pixelSize: isBold ? AppStyle.t1 : AppStyle.t1
+                font.bold: isBold ? Font.Bold : Font.Normal
+                font.weight: isBold ? Font.Bold : Font.Normal
                 verticalAlignment: Image.AlignVCenter
                 Layout.alignment: Qt.AlignVCenter
                 color: itemDelegate.hovered ? "white" : "dark"
@@ -43,11 +50,13 @@ ComboBox {
 
             Label {
                 opacity: 0.87
-                font.pointSize: 12
                 text: "✅"
                 visible: root.currentIndex == index
                 Layout.fillWidth: true
-                font.weight: Font.Medium
+                font.family: FontStyle.getContentFont.name
+                font.pixelSize: isBold ? AppStyle.t1 : AppStyle.t1
+                font.bold: isBold ? Font.Bold : Font.Normal
+                font.weight: isBold ? Font.Bold : Font.Normal
                 verticalAlignment: Image.AlignVCenter
                 horizontalAlignment: Image.AlignRight
                 Layout.alignment: Qt.AlignVCenter
@@ -92,10 +101,12 @@ ComboBox {
             spacing: 10
             Label {
                 opacity: 0.87
-                font.pointSize: 12
+                font.family: FontStyle.getContentFont.name
+                font.pixelSize: isBold ? AppStyle.t1 : AppStyle.t1
+                font.bold: isBold ? Font.Bold : Font.Normal
+                font.weight: isBold ? Font.Bold : Font.Normal
                 text: model.get(currentIndex).name
                 Layout.fillWidth: true
-                font.weight: Font.Medium
                 verticalAlignment: Image.AlignVCenter
                 Layout.alignment: Qt.AlignVCenter
                 color: "black"
