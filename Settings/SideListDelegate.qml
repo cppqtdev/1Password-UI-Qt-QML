@@ -2,6 +2,10 @@ import QtQuick 2.15
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.3
 
+import "../common"
+import FontStyle 1.0
+import AppStyle 1.0
+
 ItemDelegate {
     id:root
     property string iconRectColor: "#5fc4dc"
@@ -36,20 +40,25 @@ ItemDelegate {
 
             Label{
                 text: iconRectIcon
-                font.pointSize: 12
+                font.family: FontStyle.getContentFont.name
+                font.pixelSize:  AppStyle.t1
+                font.bold: Font.Normal
+                font.weight: Font.Normal
                 anchors.centerIn: parent
             }
         }
 
         Label {
             opacity: 0.87
-            font.pointSize: 12
             text: name
             Layout.fillWidth: true
-            font.weight: Font.Medium
+            font.family: FontStyle.getContentFont.name
+            font.pixelSize:  AppStyle.t1
+            font.bold: Font.Normal
+            font.weight: Font.Normal
             verticalAlignment: Image.AlignVCenter
             Layout.alignment: Qt.AlignVCenter
-            color: root.highlighted || root.hovered ? "white" : "dark"
+            color: root.highlighted || root.hovered ? "white" : AppStyle.textColor
         }
     }
 }

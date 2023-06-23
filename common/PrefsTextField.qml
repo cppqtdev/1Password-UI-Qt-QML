@@ -2,16 +2,25 @@ import QtQuick 2.0
 import QtQuick.Controls 2.0
 import QtGraphicalEffects 1.0
 
+import "../"
+import FontStyle 1.0
+import AppStyle 1.0
+
 TextField {
     id: root
+    property bool isBold: false
     property color checkedColor: "#D5DBDB"
     signal doubleClicked(var event)
     property real backwidth: 213
     property real backHeight: 42
 
     placeholderText: qsTr("Enter ")
-    font.pointSize: 14
-    font.weight: Font.Thin
+    placeholderTextColor: AppTheme.darkTheme ? "#FFFFFF" : "grey"
+    color: AppTheme.darkTheme ? "#FFFFFF" : "grey"
+    font.family: FontStyle.getContentFont.name
+    font.pixelSize: isBold ? AppStyle.t1 : AppStyle.t1
+    font.bold: isBold ? Font.Bold : Font.Normal
+    font.weight: isBold ? Font.Bold : Font.Normal
     antialiasing: true
     verticalAlignment: Text.AlignVCenter
     horizontalAlignment:Text.AlignHCenter

@@ -1,10 +1,16 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
+
+import "../"
+import "./"
+import FontStyle 1.0
+import AppStyle 1.0
+
 ComboBox {
     id: root
-    property color checkedColor: "#dde4de"
-
+    property color checkedColor: AppTheme.darkTheme ? "#313131" : "#dde4de"
+    property bool isBold: false
     delegate:ItemDelegate {
         id:itemDelegate
         property string iconRectIcon: iconName ? iconName : ""
@@ -15,7 +21,7 @@ ComboBox {
         focus: true
 
         background: Rectangle{
-            color: itemDelegate.hovered ? "#0570eb" : "transparent"
+            color: itemDelegate.hovered ? "#0570eb" : AppStyle.transparent
             anchors.fill: parent
             radius: 8
         }
@@ -31,23 +37,27 @@ ComboBox {
 
             Label {
                 opacity: 0.87
-                font.pointSize: 12
                 text: name
+                color: itemDelegate.hovered ? "white" : AppStyle.textColor
                 Layout.fillWidth: true
-                font.weight: Font.Medium
+                font.family: FontStyle.getContentFont.name
+                font.pixelSize: isBold ? AppStyle.t1 : AppStyle.t1
+                font.bold: isBold ? Font.Bold : Font.Normal
+                font.weight: isBold ? Font.Bold : Font.Normal
                 verticalAlignment: Image.AlignVCenter
                 Layout.alignment: Qt.AlignVCenter
-                color: itemDelegate.hovered ? "white" : "dark"
                 Layout.leftMargin: 10
             }
 
             Label {
                 opacity: 0.87
-                font.pointSize: 12
                 text: "✅"
                 visible: root.currentIndex == index
                 Layout.fillWidth: true
-                font.weight: Font.Medium
+                font.family: FontStyle.getContentFont.name
+                font.pixelSize: isBold ? AppStyle.t1 : AppStyle.t1
+                font.bold: isBold ? Font.Bold : Font.Normal
+                font.weight: isBold ? Font.Bold : Font.Normal
                 verticalAlignment: Image.AlignVCenter
                 horizontalAlignment: Image.AlignRight
                 Layout.alignment: Qt.AlignVCenter
@@ -78,7 +88,7 @@ ComboBox {
             context.lineTo(width, 0);
             context.lineTo(width / 2, height);
             context.closePath();
-            context.fillStyle = "white"
+            context.fillStyle = "#FFFFFF"
             context.fill();
         }
     }
@@ -92,13 +102,14 @@ ComboBox {
             spacing: 10
             Label {
                 opacity: 0.87
-                font.pointSize: 12
+                font.family: FontStyle.getContentFont.name
+                font.pixelSize: isBold ? AppStyle.t1 : AppStyle.t1
+                font.bold: isBold ? Font.Bold : Font.Normal
+                font.weight: isBold ? Font.Bold : Font.Normal
                 text: model.get(currentIndex).name
                 Layout.fillWidth: true
-                font.weight: Font.Medium
                 verticalAlignment: Image.AlignVCenter
                 Layout.alignment: Qt.AlignVCenter
-                color: "black"
                 elide: Text.ElideRight
                 Layout.leftMargin: 10
             }
@@ -132,6 +143,7 @@ ComboBox {
 
         background: Rectangle {
             anchors.fill: parent
+            color: AppStyle.sideBarDarkColor
             radius: 6
             border.width: 0.6
             border.color: "grey"

@@ -25,7 +25,7 @@ ScreenPage{
 
             PrefsCheckboxLable{
                 title: qsTr("Keep 1Password in the notification area")
-                description: qsTr("1Password will be available in the notification area even when the main window in closed.").arg("<a href='https://www.example.com'>Click me!</a>")
+                description: qsTr("1Password will be available in the notification area even when the main window in closed.")
             }
             LablePrefsComboBox{
                 label:qsTr("Click the icon to")
@@ -35,16 +35,9 @@ ScreenPage{
                 title: qsTr("Format secure notes using Markdown")
                 description: qsTr("%1").arg("<a href='https://www.example.com'>Learn more about using Markdown.</a>")
             }
-            Label {
-                opacity: 0.87
-                font.pointSize: 14
-                text:qsTr("Default Vault")
-                font.weight: Font.Medium
-                font.bold: true
-                Layout.alignment: Qt.AlignLeft
-                color: "black"
-                elide: Text.ElideRight
-                Layout.leftMargin: 10
+
+            PrefsSettingsHeader{
+                text: qsTr("Default Vault")
             }
 
             LablePrefsComboBox{
@@ -52,43 +45,22 @@ ScreenPage{
                 model: SideListModel{}
             }
 
-            Label {
-                Layout.fillWidth: true
-                opacity: 0.87
-                font.pointSize: 10
-                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                text:qsTr("Set a default location for saving new items on this device , or let 1password make a suggestion.")
-                font.weight: Font.Medium
-                Layout.alignment: Qt.AlignLeft
-                color: "black"
-                elide: Text.ElideRight
-                Layout.leftMargin: 10
+            PrefsSettingsHeader{
+                isBold: false
+                text: qsTr("Set a default location for saving new items on this device , or let 1password make a suggestion.")
             }
-            Label {
-                opacity: 0.87
-                font.pointSize: 14
-                text:qsTr("Keyboard Shortcuts")
-                font.weight: Font.Medium
-                font.bold: true
-                Layout.alignment: Qt.AlignLeft
-                color: "black"
-                elide: Text.ElideRight
-                Layout.leftMargin: 10
+
+            PrefsSettingsHeader{
+                text: qsTr("Keyboard Shortcuts")
             }
 
             RowLayout{
                 Layout.fillWidth: true
-                Label {
-                    Layout.fillWidth: true
-                    opacity: 0.87
-                    font.pointSize: 12
-                    text:qsTr("Show 1Password :")
-                    font.weight: Font.Medium
-                    Layout.alignment: Qt.AlignLeft
-                    color: "black"
-                    elide: Text.ElideRight
-                    Layout.leftMargin: 10
+                PrefsSettingsHeader{
+                    isBold: false
+                    text: qsTr("Show 1Password :")
                 }
+
                 PrefsTextField{
                     Layout.alignment: Qt.AlignRight
                     Layout.rightMargin: 10
@@ -97,17 +69,11 @@ ScreenPage{
             }
             RowLayout{
                 Layout.fillWidth: true
-                Label {
-                    Layout.fillWidth: true
-                    opacity: 0.87
-                    font.pointSize: 12
-                    text:qsTr("Show Quick Access :")
-                    font.weight: Font.Medium
-                    Layout.alignment: Qt.AlignLeft
-                    color: "black"
-                    elide: Text.ElideRight
-                    Layout.leftMargin: 10
+                PrefsSettingsHeader{
+                    isBold: false
+                    text: qsTr("Show Quick Access :")
                 }
+
                 PrefsTextField{
                     Layout.alignment: Qt.AlignRight
                     Layout.rightMargin: 10
@@ -116,17 +82,11 @@ ScreenPage{
             }
             RowLayout{
                 Layout.fillWidth: true
-                Label {
-                    Layout.fillWidth: true
-                    opacity: 0.87
-                    font.pointSize: 12
-                    text:qsTr("Lock 1Password :")
-                    font.weight: Font.Medium
-                    Layout.alignment: Qt.AlignLeft
-                    color: "black"
-                    elide: Text.ElideRight
-                    Layout.leftMargin: 10
+                PrefsSettingsHeader{
+                    isBold: false
+                    text: qsTr("Lock 1Password :")
                 }
+
                 PrefsTextField{
                     Layout.alignment: Qt.AlignRight
                     Layout.rightMargin: 10
@@ -135,17 +95,11 @@ ScreenPage{
             }
             RowLayout{
                 Layout.fillWidth: true
-                Label {
-                    Layout.fillWidth: true
-                    opacity: 0.87
-                    font.pointSize: 12
-                    text:qsTr("AutoFill :")
-                    font.weight: Font.Medium
-                    Layout.alignment: Qt.AlignLeft
-                    color: "black"
-                    elide: Text.ElideRight
-                    Layout.leftMargin: 10
+                PrefsSettingsHeader{
+                    isBold: false
+                    text: qsTr("AutoFill :")
                 }
+
                 PrefsTextField{
                     Layout.alignment: Qt.AlignRight
                     Layout.rightMargin: 10
@@ -153,9 +107,12 @@ ScreenPage{
                 }
             }
 
-            HorizontalDivider {}
-
+            Item{
+                Layout.fillWidth: true
+                height: 10
+            }
         }
+
     }
     Component.onDestruction: {
         cleanup()

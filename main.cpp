@@ -10,7 +10,7 @@
 #include <QtCore/QCommandLineOption>
 #include <QtCore/QCommandLineParser>
 #include <QStyleHints>
-
+#include <QtQml> // We connect to use the qmlRegisterSingletonType function
 #include <systemtray.h>
 
 class Utils : public QObject {
@@ -38,12 +38,14 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationVersion(QT_VERSION_STR);
 
 
+    qmlRegisterSingletonType(QUrl("qrc:/AppStyle.qml"), "AppStyle", 1, 0, "AppStyle");
+    qmlRegisterSingletonType(QUrl("qrc:/FontSystem.qml"), "FontStyle", 1, 0, "FontStyle");
 
     QQmlContext *context = engine.rootContext();
     SystemTray * systemTray = new SystemTray();
 
     context->setContextProperty("systemTray", systemTray);
-    context->setContextProperty("myApp", &appui);
+    context->setContextProperty("AppTheme", &appui);
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     return app.exec();

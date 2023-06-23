@@ -1,7 +1,12 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.3
+
 import "../GameScreens"
+import "../"
+import AppStyle 1.0
+import FontStyle 1.0
+
 ApplicationWindow {
     id:root
     visible: true
@@ -11,7 +16,9 @@ ApplicationWindow {
     maximumWidth: 1000
     minimumHeight: 750
     maximumHeight: 750
+    flags: Qt.Dialog// Qt.WindowMaximizeButtonHint || Qt.MinimumSize
     title: "Settings"
+    color: AppStyle.background
 
     Component{
         id:generalSettings
@@ -106,7 +113,7 @@ ApplicationWindow {
 
         Rectangle {
             id: mainRect
-            color: "#dde4de"
+            color: AppStyle.sideBarDarkColor
             SplitView.preferredWidth: 250
             SplitView.maximumWidth: 300
             SplitView.minimumWidth: 250
@@ -158,7 +165,7 @@ ApplicationWindow {
         Rectangle {
             id: collapsibleRect
             SplitView.fillWidth: true
-            color: "#fafbfb"
+            color: AppStyle.transparent
             clip: true
             Loader{
                 id:mainLoader

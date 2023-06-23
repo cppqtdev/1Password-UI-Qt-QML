@@ -4,17 +4,24 @@ import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.3
 import QtQuick.Controls.Material 2.3
 import QtQml 2.15
+
 import "./ScreensComponents"
 import "./GameScreens"
 import "./ScreensComponents/LeftSideDrawer"
 import "./ScreensComponents/RightSideDrawer"
 import "./Settings"
 import "./AddItemScreen"
+
+import FontStyle 1.0
+import AppStyle 1.0
+
 ApplicationWindow {
     id:root
     width: 1280
     height: 750
     visible: true
+    color: AppStyle.background
+
 
     property color homeColor: "#313a41"
     property color borderColor: "#444b51"
@@ -28,7 +35,7 @@ ApplicationWindow {
     property color transparentColor: "transparent"
 
     // primary and accent properties:
-    property variant primaryPalette: myApp.defaultPrimaryPalette()
+    property variant primaryPalette: AppTheme.defaultPrimaryPalette()
     property color primaryLightColor: primaryPalette[0]
     property color primaryColor: primaryPalette[1]
     property color primaryDarkColor: primaryPalette[2]
@@ -38,7 +45,7 @@ ApplicationWindow {
     property string iconOnPrimaryLightFolder: primaryPalette[6]
     property string iconOnPrimaryFolder: primaryPalette[7]
     property string iconOnPrimaryDarkFolder: primaryPalette[8]
-    property variant accentPalette: myApp.defaultAccentPalette()
+    property variant accentPalette: AppTheme.defaultAccentPalette()
     property color accentColor: accentPalette[0]
     property color textOnAccent: accentPalette[1]
     property string iconOnAccentFolder: accentPalette[2]
@@ -46,7 +53,7 @@ ApplicationWindow {
     Material.accent: accentColor
 
     // theme Dark vs Light properties:
-    property variant themePalette: myApp.defaultThemePalette()
+    property variant themePalette: AppTheme.defaultThemePalette()
     property color dividerColor: themePalette[0]
     property color cardAndDialogBackground: themePalette[1]
     property real primaryTextOpacity: themePalette[2]
@@ -68,7 +75,9 @@ ApplicationWindow {
     onIsDarkThemeChanged: {
         if(isDarkTheme == 1) {
             Material.theme = Material.Dark
+            root.background = AppStyle.backgroundColor
         } else {
+            root.background = AppStyle.background
             Material.theme = Material.Light
         }
     }
@@ -162,21 +171,13 @@ ApplicationWindow {
         }
     }
 
-    AddItemDialog{
-        id:addItemDialog
-    }
-
     header: TitleBar{
         id:titlebar
         onMenuClicked: {
             drawer.open()
         }
         onHomeClicked: {
-            //mainStack.pop(null)
-            //addItemDialog.open()
-            var component = Qt.createComponent("qrc:/AddItemScreen/AddItemDialog.qml");
-            var win = component.createObject(root);
-            win.show();
+            AppTheme.swapThemePalette()
         }
         onHelpCliked: {
             var component = Qt.createComponent("qrc:/Settings/Settings.qml");
@@ -281,13 +282,19 @@ ApplicationWindow {
         width: parent.width*0.40
         height: root.height
         edge: Qt.RightEdge
+        background: Rectangle{
+            anchors.fill: parent
+            color: AppStyle.background
+        }
+
         contentItem:Page{
             padding: 0
             anchors.fill: parent
+            background: settingsDrawer.background
             header:Rectangle{
                 width: parent.width
                 height: 40
-                color: transparentColor
+                color: AppStyle.titleBarColor
                 Column{
                     width: parent.width
                     height: parent.height
@@ -318,6 +325,7 @@ ApplicationWindow {
                             opacity: 0.8
                             anchors.verticalCenter: crossButton.verticalCenter
                             text: navigationModel[navigationIndex]["name"]
+                            color: AppStyle.textColor
                         }
                     }
                     Rectangle{
@@ -344,7 +352,7 @@ ApplicationWindow {
             footer: Rectangle{
                 width: parent.width
                 height: 56
-                color: transparentColor
+                color: AppStyle.background
                 DrawerFavoritesNavigationBar{
                     width: parent.width
                     anchors.centerIn: parent

@@ -26,17 +26,10 @@ ScreenPage{
                 model: SideListModel{}
             }
 
-            Label {
-                Layout.fillWidth: true
-                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                opacity: 0.87
-                font.pointSize: 10
-                text:qsTr("Betas and Nighlies are published more often. They include less-tested features and improvements.")
-                font.weight: Font.Medium
+            PrefsSettingsHeader{
+                isBold: false
                 Layout.alignment: Qt.AlignLeft
-                color: "black"
-                elide: Text.ElideRight
-                Layout.leftMargin: 10
+                text:qsTr("Betas and Nighlies are published more often. They include less-tested features and improvements.")
             }
 
 
@@ -86,10 +79,14 @@ ScreenPage{
                 onClicked: {
                 }
             }
-             HorizontalDivider {}
+
+            Item{
+                Layout.fillWidth: true
+                height: 10
+            }
 
         }
-    }
+     }
     Component.onDestruction: {
         cleanup()
     }
