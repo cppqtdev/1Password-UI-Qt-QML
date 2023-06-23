@@ -5,6 +5,7 @@ import QtQuick.Controls.Styles 1.4
 import FontStyle 1.0
 import AppStyle 1.0
 import "../"
+import "./"
 CheckBox {
     id: control
     property bool isBold: false

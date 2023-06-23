@@ -2,6 +2,7 @@ import QtQuick 2.9
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.5
 import "../"
+import "./"
 import AppStyle 1.0
 import FontStyle 1.0
 RowLayout {
@@ -22,7 +23,6 @@ RowLayout {
         font.weight: isBold ? Font.Bold : Font.Normal
         verticalAlignment: Text.AlignVCenter
         Layout.alignment: Qt.AlignVCenter
-        color: "black"
         elide: Text.ElideRight
         Layout.leftMargin: 10
     }

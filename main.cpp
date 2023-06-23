@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
     SystemTray * systemTray = new SystemTray();
 
     context->setContextProperty("systemTray", systemTray);
-    context->setContextProperty("myApp", &appui);
+    context->setContextProperty("AppTheme", &appui);
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     return app.exec();

@@ -5,6 +5,8 @@ import "./"
 import "../ScreensComponents"
 import "../Settings"
 import "../common"
+
+import AppStyle 1.0
 ScreenPage{
     id:root
     anchors.fill: parent
@@ -37,7 +39,7 @@ ScreenPage{
 
         Rectangle {
             id: mainRect
-            color: "#dde4de"
+            color: AppStyle.sideBarDarkColor
             SplitView.preferredWidth: 300
             SplitView.maximumWidth: 300
             SplitView.minimumWidth: 300
@@ -85,7 +87,7 @@ ScreenPage{
         Rectangle {
             id: collapsibleRect
             SplitView.fillWidth: true
-            color: "transparent"
+            color: AppStyle.transparent
             clip: true
 //            SplitView {
 //                anchors.fill: parent

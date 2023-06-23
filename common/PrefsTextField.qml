@@ -15,6 +15,8 @@ TextField {
     property real backHeight: 42
 
     placeholderText: qsTr("Enter ")
+    placeholderTextColor: AppTheme.darkTheme ? "#FFFFFF" : "grey"
+    color: AppTheme.darkTheme ? "#FFFFFF" : "grey"
     font.family: FontStyle.getContentFont.name
     font.pixelSize: isBold ? AppStyle.t1 : AppStyle.t1
     font.bold: isBold ? Font.Bold : Font.Normal

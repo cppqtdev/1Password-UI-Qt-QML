@@ -27,10 +27,28 @@ QtObject {
 
     readonly property int       radius : 5
 
+    // Dark Theme Colors
+    readonly property color backgroundColor: "#2d3037"
+    readonly property color buttonColor: "#202227"
+    readonly property color buttonPressedColor: "#6ccaf2"
+    readonly property color disabledButtonColor: "#555555"
+    readonly property color viewColor: "#202227"
+    readonly property color delegate1Color: Qt.darker(viewColor, 1.2)
+    readonly property color delegate2Color: Qt.lighter(viewColor, 1.2)
+    readonly property color textColor: AppTheme.darkTheme ? "#ffffff" : "#000000"
+    readonly property color textDarkColor: "#232323"
+    readonly property color disabledTextColor: "#777777"
+    readonly property color sliderColor: "#6ccaf2"
+    readonly property color errorColor: "#ba3f62"
+    readonly property color infoColor: "#3fba62"
+    readonly property color sideBarDarkColor: AppTheme.darkTheme ? "#313131" : "#dde4de"
+    readonly property color titleBarColor: AppTheme.darkTheme ? "#313131" : "transparent"
+
+    // light theme colors
 
     readonly property color accent: "#FFFFFF";
     readonly property color pageground: "#FFFFFF";
-    readonly property color background: "#FFFFFF";
+    readonly property color background: AppTheme.darkTheme ? "#262626" : "#FFFFFF";
     readonly property color backgroundActivated: "#FFFFFF";
     readonly property color backgroundDeactivated: "#E5E5E5";
     readonly property color backgroundHovered: "#dcdcdc";
@@ -72,6 +90,8 @@ QtObject {
 
     readonly property color lightShadow: "#28555555";
     readonly property color darkShadow: "#1e2533";
+
+    readonly property color transparent: "transparent"
 
     readonly property bool shadow: true;
     readonly property int duration: 200

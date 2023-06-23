@@ -41,7 +41,7 @@ ToolBar {
                 MenuItem {
                     text: isDarkTheme? qsTr("Light Theme") : qsTr("Dark Theme")
                     onTriggered: {
-                        themePalette = myApp.swapThemePalette()
+                        themePalette = AppTheme.swapThemePalette()
                     }
                 }
                 MenuItem {

@@ -2,6 +2,9 @@ import QtQuick 2.9
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2
 
+import "../../"
+import AppStyle 1.0
+import FontStyle 1.0
 Pane {
     id: myBar
     property bool favMenuBugfix: false
@@ -11,6 +14,11 @@ Pane {
     rightPadding: 0
     topPadding: 0
     height: isDarkTheme? 56 + darkDivider.height : 56
+    background: Rectangle{
+        anchors.fill: parent
+        color: AppStyle.transparent
+    }
+
     RowLayout {
         focus: false
         anchors.left: parent.left

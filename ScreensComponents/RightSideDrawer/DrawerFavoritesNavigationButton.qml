@@ -3,6 +3,9 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2
 import QtQuick.Controls.Material 2.2
 
+import "../../"
+import AppStyle 1.0
+import FontStyle 1.0
 ToolButton {
     id: myButton
     property bool isActive: modelData === navigationIndex
@@ -33,7 +36,7 @@ ToolButton {
             anchors.horizontalCenter: parent.horizontalCenter
             text: navigationModel[modelData].name
             opacity: isActive? 1.0 : 0.7
-            color: isActive? primaryColor : flatButtonTextColor
+            color: isActive? AppTheme.darkTheme ? AppStyle.textColor : primaryColor : flatButtonTextColor
             font.pixelSize: fontSizeActiveNavigationButton
         } // label
     } // column

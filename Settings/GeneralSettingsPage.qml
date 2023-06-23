@@ -15,7 +15,7 @@ ScreenPage{
         clip: true
         background: Rectangle{
             anchors.fill: parent
-            color: "transparent"
+            color: AppStyle.transparent
         }
 
         ColumnLayout{

@@ -630,5 +630,6 @@
         <file>AppStyle.qml</file>
         <file>FontSystem.qml</file>
         <file>common/PrefsSettingsHeader.qml</file>
+        <file>common/Label.qml</file>
     </qresource>
 </RCC>

@@ -1,10 +1,17 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.3
+
+import "../common"
+import "../"
+import AppStyle 1.0
+import FontStyle 1.0
+
 Rectangle{
     id:root
     signal clicked()
     property string borderColor: "grey"
+    property string backgroundColor: AppTheme.darkTheme ? "#404040" : AppStyle.background
     property int spacing: 5
     width: 70
     height: 80
@@ -23,25 +30,22 @@ Rectangle{
                 implicitWidth: 15
                 implicitHeight: 15
                 radius: 5
-                color: "#dde4de"
+                color: root.backgroundColor
                 border.width: 0.5
                 border.color:"grey"
             }
             Label {
                 opacity: 0.87
-                font.pointSize: 8
                 text:qsTr("Aa")
                 font.weight: Font.Medium
-                font.bold: true
                 Layout.alignment: Qt.AlignLeft
-                color: "black"
             }
         }
 
         Rectangle{
             width: parent.width
             height: 1
-            color: "#dde4de"
+            color: "grey"
         }
 
         RowLayout{
@@ -49,24 +53,21 @@ Rectangle{
                 implicitWidth: 15
                 implicitHeight: 15
                 radius: 5
-                color: "#dde4de"
+                color: root.backgroundColor
                 border.width: 0.5
                 border.color:"grey"
             }
             Label {
                 opacity: 0.87
-                font.pointSize: 8
                 text:qsTr("Aa")
                 font.weight: Font.Medium
-                font.bold: true
                 Layout.alignment: Qt.AlignLeft
-                color: "black"
             }
         }
         Rectangle{
             width: parent.width
             height: 1
-            color: "#dde4de"
+            color: "grey"
         }
 
         RowLayout{
@@ -74,18 +75,15 @@ Rectangle{
                 implicitWidth: 15
                 implicitHeight: 15
                 radius: 5
-                color: "#dde4de"
+                color: root.backgroundColor
                 border.width: 0.5
                 border.color:"grey"
             }
             Label {
                 opacity: 0.87
-                font.pointSize: 8
                 text:qsTr("Aa")
                 font.weight: Font.Medium
-                font.bold: true
                 Layout.alignment: Qt.AlignLeft
-                color: "black"
             }
         }
 

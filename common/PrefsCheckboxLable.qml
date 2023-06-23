@@ -5,7 +5,7 @@ import QtQuick.Layouts 1.3
 import FontStyle 1.0
 import AppStyle 1.0
 import "../"
-
+import "./"
 ColumnLayout{
     id:root
     Layout.fillWidth: true
@@ -59,7 +59,7 @@ ColumnLayout{
         }
     }
 
-    LabelSubheading {
+    Label{
         Layout.fillWidth: true
         width: root.width
         leftPadding: control.spacing + 22 + spacing

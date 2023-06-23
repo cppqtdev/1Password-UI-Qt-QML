@@ -58,6 +58,7 @@ ComboBox {
             Label {
                 opacity: 0.87
                 text: name
+                color: itemDelegate.hovered ? "white" : AppStyle.textColor
                 Layout.fillWidth: true
                 font.family: FontStyle.getContentFont.name
                 font.pixelSize: isBold ? AppStyle.t1 : AppStyle.t1
@@ -65,7 +66,6 @@ ComboBox {
                 font.weight: isBold ? Font.Bold : Font.Normal
                 verticalAlignment: Image.AlignVCenter
                 Layout.alignment: Qt.AlignVCenter
-                color: itemDelegate.hovered ? "white" : "dark"
                 Layout.leftMargin: iconImageRect.visible ? 0 : 10
             }
 
@@ -150,7 +150,6 @@ ComboBox {
                 font.weight: isBold ? Font.Bold : Font.Normal
                 verticalAlignment: Image.AlignVCenter
                 Layout.alignment: Qt.AlignVCenter
-                color: "black"
                 elide: Text.ElideRight
                 Layout.leftMargin:iconRect.visible ? 0 : 10
             }
@@ -184,7 +183,7 @@ ComboBox {
 
         background: Rectangle {
             anchors.fill: parent
-            color: "white"
+            color: AppStyle.sideBarDarkColor
             radius: 6
             border.width: 0.6
             border.color: "grey"

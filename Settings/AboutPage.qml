@@ -4,6 +4,9 @@ import QtQuick.Controls 2.15
 import "../GameScreens"
 import "../common"
 import "../Settings"
+import "../"
+import AppStyle 1.0
+import FontStyle 1.0
 ScreenPage{
     id:root
     contentHeight: mainLayout.implicitHeight
@@ -63,7 +66,7 @@ ScreenPage{
             Rectangle{
                 Layout.fillWidth: true
                 height: 150
-                color: "#ffffff"
+                color: AppStyle.background
                 border.width: 2
                 border.color: "#e9e9e9"
                 Layout.leftMargin: 20

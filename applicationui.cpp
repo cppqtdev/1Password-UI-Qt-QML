@@ -9,6 +9,7 @@ ApplicationUI::ApplicationUI(QObject *parent) : QObject(parent)
 {
     // default theme is light
     mIsDarkTheme = false;
+    m_darkTheme = false;
     // default primary color is Teal
     mPrimaryPalette =  8;
     // default accent color is DeepOrange
@@ -19,6 +20,7 @@ ApplicationUI::ApplicationUI(QObject *parent) : QObject(parent)
 QStringList ApplicationUI::swapThemePalette()
 {
     mIsDarkTheme = !mIsDarkTheme;
+    setDarkTheme(mIsDarkTheme);
     if (mIsDarkTheme) {
         return darkPalette;
     }
@@ -123,3 +125,16 @@ QStringList ApplicationUI::defaultAccentPalette()
 }
 
 
+
+bool ApplicationUI::darkTheme() const
+{
+    return m_darkTheme;
+}
+
+void ApplicationUI::setDarkTheme(bool newDarkTheme)
+{
+    if (m_darkTheme == newDarkTheme)
+        return;
+    m_darkTheme = newDarkTheme;
+    emit darkThemeChanged();
+}
