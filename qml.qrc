@@ -632,5 +632,13 @@
         <file>common/PrefsSettingsHeader.qml</file>
         <file>common/Label.qml</file>
         <file>AddItemScreen/AddItemHomePage.qml</file>
+        <file>common/RoundedRectangle.qml</file>
+        <file>Img/Icons/arrow-left-solid.svg</file>
+        <file>Img/Icons/chevron-left-solid.svg</file>
+        <file>Img/Icons/magnifying-glass-solid.svg</file>
+        <file>Img/Icons/xmark-solid.svg</file>
+        <file>AddItemScreen/PrefsCategoriesDelegate.qml</file>
+        <file>AddItemScreen/CategoriesListModel.qml</file>
+        <file>AddItemScreen/PrefsItemDelegate.qml</file>
     </qresource>
 </RCC>

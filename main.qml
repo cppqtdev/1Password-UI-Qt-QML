@@ -179,12 +179,15 @@ ApplicationWindow {
             AppTheme.swapThemePalette()
         }
         onHelpCliked: {
-            var component = Qt.createComponent("qrc:/Settings/Settings.qml");//Qt.createComponent("qrc:/AddItemScreen/AddItemDialog.qml");//Qt.createComponent("qrc:/Settings/Settings.qml");
+            var component = Qt.createComponent("qrc:/AddItemScreen/AddItemDialog.qml");//Qt.createComponent("qrc:/Settings/Settings.qml");
             var win = component.createObject(root);
             win.show();
         }
         onSettingsCliked: {
-            settingsDrawer.open()
+            var component = Qt.createComponent("qrc:/Settings/Settings.qml");
+            var win = component.createObject(root);
+            win.show();
+            //settingsDrawer.open()
         }
 
         Component{

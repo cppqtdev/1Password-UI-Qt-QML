@@ -10,15 +10,23 @@ import ".././"
 ApplicationWindow {
     id:root
     visible: true
-    width: 850
-    height: 650
-    minimumWidth: 850
-    maximumWidth: 850
-    minimumHeight: 650
-    maximumHeight: 650
+    width: 550
+    height: 700
+    minimumWidth: 550
+    maximumWidth: 550
+    minimumHeight: 700
+    maximumHeight: 700
     title: "Add Items"
     color: AppStyle.background
-    flags: Qt.Dialog
+    flags: Qt.FramelessWindowHint //Qt.Dialog
+    background: Rectangle{
+        color: AppStyle.background
+        anchors.fill: parent
+        border.color: "grey"
+        border.width: 0.5
+        radius: 8
+    }
+
     Loader{
         id:mainLoader
         anchors.fill: parent
