@@ -139,13 +139,15 @@ ApplicationWindow {
                     focus: true
 
                     Rectangle{
-                        height: parent.height * 0.59
+                        height: parent.height * 0.60
                         width: 5
-                        color:"yellow"
-                        anchors.rightMargin: 5
-                        anchors.verticalCenter: parent.verticalCenter
-                        Layout.alignment: Qt.AlignRight
-                        radius: 4
+                        color: "yellow"
+                        anchors{
+                            verticalCenter: parent.verticalCenter
+                            right: parent.right
+                            rightMargin: 10
+                        }
+                        radius: 8
                     }
                 }
 

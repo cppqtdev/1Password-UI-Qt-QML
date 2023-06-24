@@ -2,6 +2,10 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.0
 
+import "../../common"
+import "../../"
+import AppStyle 1.0
+import FontStyle 1.0
 Drawer {
     id: drawer
 
@@ -18,6 +22,10 @@ Drawer {
 
     property alias items: listView.model
     property alias index: listView.currentIndex
+    background: Rectangle{
+        anchors.fill: parent
+        color: AppStyle.sideBarDarkColor
+    }
 
     onIndexChanged: {
         var isSpacer = false
@@ -46,19 +54,11 @@ Drawer {
         // Icon controls
         //
         Rectangle {
+            id: iconRect
             z: 1
             height: 120
-            id: iconRect
             Layout.fillWidth: true
-
-            Rectangle {
-                anchors.fill: parent
-
-                Gradient {
-                    GradientStop { position: 0; color: iconBgColorLeft }
-                    GradientStop { position: 1; color: iconBgColorRight }
-                }
-            }
+            color: AppStyle.sideBarDarkColor
 
             RowLayout {
                 spacing: 16
@@ -84,14 +84,12 @@ Drawer {
                     }
 
                     Label {
-                        color: "#000"
                         text: iconTitle
                         font.weight: Font.Medium
                         font.pixelSize: 16
                     }
 
                     Label {
-                        color: "#000"
                         opacity: 0.87
                         text: iconSubtitle
                         font.pixelSize: 12
@@ -112,8 +110,10 @@ Drawer {
 
         Rectangle{
             color: "grey"
-            width: parent.width
+            Layout.fillWidth: true
             height: 1
+            Layout.topMargin: 2
+            Layout.bottomMargin: 5
         }
 
         //
@@ -124,14 +124,37 @@ Drawer {
             id: listView
             currentIndex: -1
             Layout.fillWidth: true
+            Layout.leftMargin: 10
+            Layout.rightMargin: 10
             Layout.fillHeight: true
             Component.onCompleted: currentIndex = 0
+
+            highlight: Rectangle {
+                width: parent.height * 0.7
+                height: parent.height * 0.7
+                Layout.alignment: Qt.AlignVCenter
+                Layout.leftMargin: 10
+                radius: 8
+                color: AppStyle.applicationColor
+                focus: true
+
+                Rectangle{
+                    height: parent.height * 0.60
+                    width: 5
+                    color: "yellow"
+                    anchors{
+                        verticalCenter: parent.verticalCenter
+                        right: parent.right
+                        rightMargin: 10
+                    }
+                    radius: 8
+                }
+            }
 
             delegate: DrawerItem {
                 model: items
                 width: parent.width
                 pageSelector: listView
-
                 onClicked: {
                     if (listView.currentIndex !== index)
                         listView.currentIndex = index
