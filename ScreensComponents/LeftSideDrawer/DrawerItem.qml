@@ -2,6 +2,11 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.0
 
+import "../../common"
+import "../../"
+import AppStyle 1.0
+import FontStyle 1.0
+
 ItemDelegate {
     id:root
     //
@@ -76,7 +81,11 @@ ItemDelegate {
     // Decide if we should highlight the item
     //
     highlighted: ListView.isCurrentItem ? !isLink (index) : false
-
+    background: Rectangle{
+        color: root.hovered ? root.highlighted ?  AppStyle.transparent : AppTheme.systemColor ? AppStyle.systemColorLighter : AppStyle.appColorLighter : AppStyle.transparent
+        anchors.fill: parent
+        radius: 8
+    }
     //
     // Calculate height depending on the type of item that we are
     //
@@ -124,7 +133,7 @@ ItemDelegate {
 
         Label {
             opacity: 0.54
-            color: "#000000"
+            color: AppStyle.textColor
             font.pixelSize: 14
             font.weight: Font.Medium
             text: hasSeparatorText (index) ? separatorText : ""
@@ -158,14 +167,12 @@ ItemDelegate {
         }
 
         Label {
-            opacity: 0.87
-            font.pixelSize: 14
             text: itemText (index)
             Layout.fillWidth: true
             font.weight: Font.Medium
             verticalAlignment: Image.AlignVCenter
             Layout.alignment: Qt.AlignVCenter
-            color: root.highlighted ? "white" : Qt.darkGray
+            color: root.highlighted ? "white" : AppStyle.textColor
         }
     }
 }
