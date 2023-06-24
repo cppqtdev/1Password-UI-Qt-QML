@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.15
+import QtQuick.Controls.Material 2.3
 import "./"
 import "../ScreensComponents"
 import "../Settings"
@@ -24,7 +25,7 @@ ScreenPage{
                 hoverEnabled: true
                 onHoveredChanged: {
                     if(containsMouse){
-                        colorLayer.color = "blue"
+                        colorLayer.color = AppStyle.applicationColor
                     }else{
                         colorLayer.color = mainRect.color
                     }
@@ -39,7 +40,7 @@ ScreenPage{
 
         Rectangle {
             id: mainRect
-            color: AppStyle.sideBarDarkColor
+            color: "#203040"
             SplitView.preferredWidth: 300
             SplitView.maximumWidth: 300
             SplitView.minimumWidth: 300
@@ -56,14 +57,13 @@ ScreenPage{
                     Layout.alignment: Qt.AlignVCenter
                     Layout.leftMargin: 10
                     radius: 8
-                    color:"blue"
-                    opacity: 0.7
+                    color: AppStyle.applicationColor
                     focus: true
 
                     Rectangle{
                         height: parent.height * 0.59
                         width: 5
-                        color:"yellow"
+                        color: "yellow"
                         anchors.rightMargin: 5
                         anchors.verticalCenter: parent.verticalCenter
                         Layout.alignment: Qt.AlignRight
@@ -74,6 +74,7 @@ ScreenPage{
 
                 model: SideListModel{}
                 delegate: SideListDelegate{
+                    textColorWhite: true
                     width: listItemView.width
                     iconRectIcon: iconName
                     iconRectColor: iconColor

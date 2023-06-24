@@ -22,7 +22,6 @@ ApplicationWindow {
     visible: true
     color: AppStyle.background
 
-
     property color homeColor: "#313a41"
     property color borderColor: "#444b51"
     property color backgroundColor : "#373e44"
@@ -180,7 +179,7 @@ ApplicationWindow {
             AppTheme.swapThemePalette()
         }
         onHelpCliked: {
-            var component = Qt.createComponent("qrc:/Settings/Settings.qml");
+            var component = Qt.createComponent("qrc:/Settings/Settings.qml");//Qt.createComponent("qrc:/AddItemScreen/AddItemDialog.qml");//Qt.createComponent("qrc:/Settings/Settings.qml");
             var win = component.createObject(root);
             win.show();
         }

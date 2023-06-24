@@ -10,13 +10,14 @@ ItemDelegate {
     id:root
     property string iconRectColor: "#5fc4dc"
     property string iconRectIcon: "💻"
+    property bool textColorWhite: false
     highlighted: ListView.isCurrentItem
     height: 50
     hoverEnabled: true
     focus: true
 
     background: Rectangle{
-        color: root.hovered ? root.highlighted ?  "transparent" : "#bdc9c0" :  "transparent"
+        color: root.hovered ? root.highlighted ?  AppStyle.transparent : AppTheme.systemColor ? AppStyle.systemColorLighter : AppStyle.appColorLighter : AppStyle.transparent
         anchors.fill: parent
         radius: 8
     }
@@ -58,7 +59,7 @@ ItemDelegate {
             font.weight: Font.Normal
             verticalAlignment: Image.AlignVCenter
             Layout.alignment: Qt.AlignVCenter
-            color: root.highlighted || root.hovered ? "white" : AppStyle.textColor
+            color: textColorWhite ? "#FFFFFF" : root.highlighted || root.hovered ? "#FFFFFF" : AppStyle.textColor
         }
     }
 }

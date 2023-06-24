@@ -9,19 +9,17 @@ import AppStyle 1.0
 
 ComboBox {
     id: root
-    property color checkedColor: AppTheme.darkTheme ? "#313131" : "#dde4de"
+    property color checkedColor: AppStyle.sideBarDarkColor
     property bool isBold: false
     delegate:ItemDelegate {
         id:itemDelegate
-        property string iconRectIcon: iconName ? iconName : ""
-
         width: root.width * 1.4
         height: 40
         hoverEnabled: true
         focus: true
 
         background: Rectangle{
-            color: itemDelegate.hovered ? "#0570eb" : AppStyle.transparent
+            color: itemDelegate.hovered ? AppStyle.applicationColor : AppStyle.transparent
             anchors.fill: parent
             radius: 8
         }
@@ -88,7 +86,7 @@ ComboBox {
             context.lineTo(width, 0);
             context.lineTo(width / 2, height);
             context.closePath();
-            context.fillStyle = "#FFFFFF"
+            context.fillStyle = AppTheme.darkTheme ? "white" : "black"
             context.fill();
         }
     }

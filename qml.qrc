@@ -631,5 +631,6 @@
         <file>FontSystem.qml</file>
         <file>common/PrefsSettingsHeader.qml</file>
         <file>common/Label.qml</file>
+        <file>AddItemScreen/AddItemHomePage.qml</file>
     </qresource>
 </RCC>

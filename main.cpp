@@ -29,8 +29,8 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     app.setOrganizationName("Aksh Software Solution");
     app.setOrganizationName("akshsoftsolution.com");
-    app.setApplicationDisplayName("Aksh Software");
-    app.setApplicationName("Aksh Software");
+    //app.setApplicationDisplayName("Aksh Software");
+    //app.setApplicationName("Aksh Software");
     app.setWindowIcon(QIcon(":/Img/Basic/pngwing.com.png"));
     //! [0]
     ApplicationUI appui;

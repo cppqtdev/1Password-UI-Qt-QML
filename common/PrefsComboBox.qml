@@ -8,7 +8,7 @@ import FontStyle 1.0
 
 ComboBox {
     id: root
-    property color checkedColor: "#dde4de"
+    property color checkedColor: AppStyle.sideBarDarkColor
     property bool isBold: false
     delegate:ItemDelegate {
         id:itemDelegate
@@ -21,7 +21,7 @@ ComboBox {
         focus: true
 
         background: Rectangle{
-            color: itemDelegate.hovered ? "#0437F2" : "transparent"
+            color: itemDelegate.hovered ? AppStyle.applicationColor : AppStyle.transparent
             anchors.fill: parent
             radius: 8
         }
@@ -108,7 +108,7 @@ ComboBox {
             context.lineTo(width, 0);
             context.lineTo(width / 2, height);
             context.closePath();
-            context.fillStyle = "white"
+            context.fillStyle = AppTheme.darkTheme ? "white" : "black"
             context.fill();
         }
     }

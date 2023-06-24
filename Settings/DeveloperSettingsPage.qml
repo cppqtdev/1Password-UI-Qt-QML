@@ -4,6 +4,10 @@ import QtQuick.Controls 2.15
 import "../GameScreens"
 import "../common"
 import "../Settings"
+
+import "../"
+import AppStyle 1.0
+import FontStyle 1.0
 ScreenPage{
     id:root
     contentHeight: mainLayout.implicitHeight
@@ -12,7 +16,7 @@ ScreenPage{
         clip: true
         background: Rectangle{
             anchors.fill: parent
-            color: "transparent"
+            color: AppStyle.transparent
         }
 
         ColumnLayout{
@@ -36,10 +40,10 @@ ScreenPage{
                 height: 38
                 buttonText: "Set Up SSH Agent ...";
                 innerText.color: "white"
-                color: "#0570eb"
-                hoverColor: "#0570eb"
-                pressColor: "#0570eb"
-                borderColor:"#0570eb"
+                color: AppStyle.applicationColor
+                hoverColor: AppStyle.applicationColor
+                pressColor: AppStyle.applicationColor
+                borderColor: AppStyle.applicationColor
                 fontSize: 12
                 borderWidth: 1
                 borderRadius: 8
