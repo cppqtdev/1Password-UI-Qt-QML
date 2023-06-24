@@ -60,7 +60,7 @@ QtObject {
 
     readonly property color sideBarDarkColor: AppTheme.darkTheme ? "#313131" : "#f7f7f7"
     readonly property color titleBarColor: AppTheme.darkTheme ? "#313131" : "transparent"
-    readonly property color background: AppTheme.darkTheme ? "#262626" : "#FFFFFF";
+    readonly property color background: AppTheme.darkTheme ? "#262626" : Qt.lighter("#f7f7f7")
 
 
 
