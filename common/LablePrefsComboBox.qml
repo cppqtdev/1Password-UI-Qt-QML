@@ -12,6 +12,7 @@ RowLayout {
     property var model: null
     Layout.fillWidth: true
     spacing: 10
+    property int currentIndex: 0
     Label {
         width: parent.width * 0.50
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
@@ -29,5 +30,7 @@ RowLayout {
 
     PrefsComboBoxLabel{
         model: root.model
+        currentIndex: root.currentIndex
+        onCurrentIndexChanged:root.currentIndex = currentIndex
     }
 }

@@ -14,10 +14,10 @@ Item {
     property alias innerText: innerText
     property alias buttonText2: innerText2.text;
     property alias innerText2: innerText2
-    property color color: "transparent"
-    property color hoverColor: "#aaaaaa"
-    property color pressColor: "slategray"
-     property color borderColor: "white"
+    property color color: AppStyle.applicationColor
+    property color hoverColor: AppStyle.applicationColor
+    property color pressColor: AppStyle.applicationColor
+     property color borderColor: AppStyle.applicationColorDarker
     property string sourceIcon: ""
     property int fontSize: 16
     property real borderWidth: 1

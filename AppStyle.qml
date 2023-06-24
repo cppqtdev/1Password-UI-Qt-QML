@@ -1,7 +1,7 @@
 pragma Singleton
 import QtQuick 2.9
 import QtQuick.Controls 2.5
-
+import QtQuick.Controls.Material 2.3
 QtObject {
     id: styleObject
 
@@ -41,14 +41,33 @@ QtObject {
     readonly property color sliderColor: "#6ccaf2"
     readonly property color errorColor: "#ba3f62"
     readonly property color infoColor: "#3fba62"
-    readonly property color sideBarDarkColor: AppTheme.darkTheme ? "#313131" : "#dde4de"
+
+
+    //Device Color
+    readonly property color systemColor: Material.accent
+    readonly property color systemColorLighter: Qt.lighter(Material.accent)
+    readonly property color systemColorDarker: Qt.lighter(Material.accent)
+
+    //App Color
+    readonly property color appColor: "#0570eb"
+    readonly property color appColorLighter: Qt.lighter("#0570eb")
+    readonly property color appColorDarker: Qt.lighter("#0570eb")
+
+    // Single ApplicationColor:
+    readonly property color applicationColor: AppTheme.systemColor ? systemColor : appColor
+    readonly property color applicationColorLighter: AppTheme.systemColor ? systemColorLighter : appColorLighter
+    readonly property color applicationColorDarker: AppTheme.systemColor ? systemColorDarker : appColorDarker
+
+    readonly property color sideBarDarkColor: AppTheme.darkTheme ? "#313131" : "#f7f7f7"
     readonly property color titleBarColor: AppTheme.darkTheme ? "#313131" : "transparent"
+    readonly property color background: AppTheme.darkTheme ? "#262626" : "#FFFFFF";
+
+
 
     // light theme colors
 
     readonly property color accent: "#FFFFFF";
     readonly property color pageground: "#FFFFFF";
-    readonly property color background: AppTheme.darkTheme ? "#262626" : "#FFFFFF";
     readonly property color backgroundActivated: "#FFFFFF";
     readonly property color backgroundDeactivated: "#E5E5E5";
     readonly property color backgroundHovered: "#dcdcdc";

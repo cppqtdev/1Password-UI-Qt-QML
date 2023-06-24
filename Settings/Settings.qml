@@ -98,7 +98,7 @@ ApplicationWindow {
                 hoverEnabled: true
                 onHoveredChanged: {
                     if(containsMouse){
-                        colorLayer.color = "blue"
+                        colorLayer.color = AppStyle.applicationColor
                     }else{
                         colorLayer.color = mainRect.color
                     }
@@ -135,7 +135,7 @@ ApplicationWindow {
                     Layout.alignment: Qt.AlignVCenter
                     Layout.leftMargin: 10
                     radius: 8
-                    color:"#0570eb"
+                    color: AppStyle.applicationColor
                     focus: true
 
                     Rectangle{

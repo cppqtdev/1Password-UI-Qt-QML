@@ -4,6 +4,10 @@ import QtQuick.Controls 2.15
 import "../GameScreens"
 import "../common"
 import "../Settings"
+
+import "../"
+import AppStyle 1.0
+import FontStyle 1.0
 ScreenPage{
     id:root
     contentHeight: mainLayout.implicitHeight
@@ -12,7 +16,7 @@ ScreenPage{
         clip: true
         background: Rectangle{
             anchors.fill: parent
-            color: "transparent"
+            color: AppStyle.transparent
         }
 
         ColumnLayout{
@@ -68,11 +72,11 @@ ScreenPage{
                 width: innerText.width + 40
                 height: 38
                 buttonText: "Send Diagnostics";
-                innerText.color: "#0570eb"
-                color: "transparent"
-                hoverColor: "transparent"
-                pressColor: "transparent"
-                borderColor:"#0570eb"
+                innerText.color: AppStyle.applicationColor
+                color: AppStyle.transparent
+                hoverColor: AppStyle.transparent
+                pressColor: AppStyle.transparent
+                borderColor: AppStyle.applicationColor
                 fontSize: 12
                 borderWidth: 1
                 borderRadius: 8

@@ -17,7 +17,7 @@ ScreenPage{
         clip: true
         background: Rectangle{
             anchors.fill: parent
-            color: "transparent"
+            color: AppStyle.transparent
         }
 
         ColumnLayout{
@@ -100,11 +100,11 @@ ScreenPage{
                     width: innerText.width + 40
                     height: 38
                     buttonText: "Check For Updated";
-                    innerText.color: "#0570eb"
-                    color: "transparent"
-                    hoverColor: "transparent"
-                    pressColor: "transparent"
-                    borderColor: "#0570eb"
+                    innerText.color:AppStyle.applicationColor
+                    color: AppStyle.transparent
+                    hoverColor: AppStyle.transparent
+                    pressColor: AppStyle.transparent
+                    borderColor: AppStyle.applicationColor
                     fontSize: 12
                     borderWidth: 1
                     borderRadius: 8

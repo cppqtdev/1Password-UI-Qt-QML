@@ -10,6 +10,7 @@ ApplicationUI::ApplicationUI(QObject *parent) : QObject(parent)
     // default theme is light
     mIsDarkTheme = false;
     m_darkTheme = false;
+    m_systemColor = false;
     // default primary color is Teal
     mPrimaryPalette =  8;
     // default accent color is DeepOrange
@@ -137,4 +138,17 @@ void ApplicationUI::setDarkTheme(bool newDarkTheme)
         return;
     m_darkTheme = newDarkTheme;
     emit darkThemeChanged();
+}
+
+bool ApplicationUI::systemColor() const
+{
+    return m_systemColor;
+}
+
+void ApplicationUI::setSystemColor(bool newSystemColor)
+{
+    if (m_systemColor == newSystemColor)
+        return;
+    m_systemColor = newSystemColor;
+    emit systemColorChanged();
 }

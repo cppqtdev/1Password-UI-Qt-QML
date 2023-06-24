@@ -4,9 +4,27 @@ import QtQuick.Controls 2.15
 import "../GameScreens"
 import "../common"
 import "../Settings"
+
+import "../"
+import AppStyle 1.0
+import FontStyle 1.0
 ScreenPage{
     id:root
     contentHeight: mainLayout.implicitHeight
+
+    ListModel{
+        id:themeModel
+        ListElement {
+            name: "System"
+        }
+        ListElement {
+            name: "Light"
+        }
+        ListElement {
+            name: "Dark"
+        }
+    }
+
     Pane {
         anchors.fill: parent
         clip: true
@@ -23,11 +41,27 @@ ScreenPage{
 
             LablePrefsComboBox{
                 label:qsTr("Theme :")
-                model: SideListModel{}
+                model: themeModel
+                currentIndex: 0
+                onCurrentIndexChanged: {
+                    if(currentIndex === 0){
+                        //System Theme
+                    }else if(currentIndex === 1){
+                        AppTheme.swapThemePalette()
+                        // Light Theme
+                    }else{
+                        AppTheme.swapThemePalette()
+                        //Dark Theme
+                    }
+                }
             }
 
             PrefsCheckbox{
                 text:qsTr("Use device accent color")
+                checked: AppTheme.systemColor
+                onCheckedChanged: {
+                    AppTheme.systemColor = checked
+                }
             }
 
             PrefsSettingsHeader{
@@ -41,17 +75,17 @@ ScreenPage{
                     id:left
                     spacing: 6
                     onClicked: {
-                        left.borderColor = "#0570eb"
+                        left.borderColor = AppStyle.applicationColor
                         right.borderColor = "grey"
                     }
                 }
                 PrefsDensity{
                     id:right
-                    borderColor: "#0570eb"
+                    borderColor: AppStyle.applicationColor
                     spacing: 2
                     onClicked: {
                         left.borderColor = "grey"
-                        right.borderColor = "#0570eb"
+                        right.borderColor = AppStyle.applicationColor
                     }
                 }
             }
