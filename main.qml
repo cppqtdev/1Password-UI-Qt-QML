@@ -176,7 +176,10 @@ ApplicationWindow {
             drawer.open()
         }
         onHomeClicked: {
-            AppTheme.swapThemePalette()
+            //AppTheme.swapThemePalette()
+            var component = Qt.createComponent("qrc:/Settings/Settings.qml");
+            var win = component.createObject(root);
+            win.show();
         }
         onHelpCliked: {
             var component = Qt.createComponent("qrc:/AddItemScreen/AddItemDialog.qml");//Qt.createComponent("qrc:/Settings/Settings.qml");
@@ -184,10 +187,10 @@ ApplicationWindow {
             win.show();
         }
         onSettingsCliked: {
-            var component = Qt.createComponent("qrc:/Settings/Settings.qml");
-            var win = component.createObject(root);
-            win.show();
-            //settingsDrawer.open()
+//            var component = Qt.createComponent("qrc:/Settings/Settings.qml");
+//            var win = component.createObject(root);
+//            win.show();
+            settingsDrawer.open()
         }
 
         Component{
